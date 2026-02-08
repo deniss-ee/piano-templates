@@ -1,292 +1,23 @@
-
-/* cyrillic-ext */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  src: local("Roboto Light"), local("Roboto-Light"), url(https://fonts.gstatic.com/s/roboto/v16/0eC6fl06luXEYWpBSJvXCIX0hVgzZQUfRDuZrPvH3D8.woff2) format("woff2");
-  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
-  font-display: swap;
-}
-
-/* cyrillic */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  src: local("Roboto Light"), local("Roboto-Light"), url(https://fonts.gstatic.com/s/roboto/v16/Fl4y0QdOxyyTHEGMXX8kcYX0hVgzZQUfRDuZrPvH3D8.woff2) format("woff2");
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-  font-display: swap;
-}
-
-/* greek-ext */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  src: local("Roboto Light"), local("Roboto-Light"), url(https://fonts.gstatic.com/s/roboto/v16/-L14Jk06m6pUHB-5mXQQnYX0hVgzZQUfRDuZrPvH3D8.woff2) format("woff2");
-  unicode-range: U+1F00-1FFF;
-  font-display: swap;
-}
-
-/* greek */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  src: local("Roboto Light"), local("Roboto-Light"), url(https://fonts.gstatic.com/s/roboto/v16/I3S1wsgSg9YCurV6PUkTOYX0hVgzZQUfRDuZrPvH3D8.woff2) format("woff2");
-  unicode-range: U+0370-03FF;
-  font-display: swap;
-}
-
-/* vietnamese */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  src: local("Roboto Light"), local("Roboto-Light"), url(https://fonts.gstatic.com/s/roboto/v16/NYDWBdD4gIq26G5XYbHsFIX0hVgzZQUfRDuZrPvH3D8.woff2) format("woff2");
-  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
-  font-display: swap;
-}
-
-/* latin-ext */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  src: local("Roboto Light"), local("Roboto-Light"), url(https://fonts.gstatic.com/s/roboto/v16/Pru33qjShpZSmG3z6VYwnYX0hVgzZQUfRDuZrPvH3D8.woff2) format("woff2");
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-  font-display: swap;
-}
-
-/* latin */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 300;
-  src: local("Roboto Light"), local("Roboto-Light"), url(https://fonts.gstatic.com/s/roboto/v16/Hgo13k-tfSpn0qi1SFdUfZBw1xU1rKptJj_0jans920.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-  font-display: swap;
-}
-
-/* cyrillic-ext */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v16/sTdaA6j0Psb920Vjv-mrzH-_kf6ByYO6CLYdB4HQE-Y.woff2) format("woff2");
-  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
-  font-display: swap;
-}
-
-/* cyrillic */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v16/uYECMKoHcO9x1wdmbyHIm3-_kf6ByYO6CLYdB4HQE-Y.woff2) format("woff2");
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-  font-display: swap;
-}
-
-/* greek-ext */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v16/tnj4SB6DNbdaQnsM8CFqBX-_kf6ByYO6CLYdB4HQE-Y.woff2) format("woff2");
-  unicode-range: U+1F00-1FFF;
-  font-display: swap;
-}
-
-/* greek */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v16/_VYFx-s824kXq_Ul2BHqYH-_kf6ByYO6CLYdB4HQE-Y.woff2) format("woff2");
-  unicode-range: U+0370-03FF;
-  font-display: swap;
-}
-
-/* vietnamese */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v16/NJ4vxlgWwWbEsv18dAhqnn-_kf6ByYO6CLYdB4HQE-Y.woff2) format("woff2");
-  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
-  font-display: swap;
-}
-
-/* latin-ext */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v16/Ks_cVxiCiwUWVsFWFA3Bjn-_kf6ByYO6CLYdB4HQE-Y.woff2) format("woff2");
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
-  font-display: swap;
-}
-
-/* latin */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v16/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-  font-display: swap;
-}
-
-/* cyrillic-ext */
-@font-face {
-  font-family: "Roboto";
-  font-style: italic;
-  font-weight: 500;
-  src: local("Roboto Medium Italic"), local("Roboto-MediumItalic"), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51S7ACc3CsTYl4BOQ3o.woff2) format("woff2");
-  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-  font-display: swap;
-}
-
-/* cyrillic */
-@font-face {
-  font-family: "Roboto";
-  font-style: italic;
-  font-weight: 500;
-  src: local("Roboto Medium Italic"), local("Roboto-MediumItalic"), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51S7ACc-CsTYl4BOQ3o.woff2) format("woff2");
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-  font-display: swap;
-}
-
-/* greek-ext */
-@font-face {
-  font-family: "Roboto";
-  font-style: italic;
-  font-weight: 500;
-  src: local("Roboto Medium Italic"), local("Roboto-MediumItalic"), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51S7ACc2CsTYl4BOQ3o.woff2) format("woff2");
-  unicode-range: U+1F00-1FFF;
-  font-display: swap;
-}
-
-/* greek */
-@font-face {
-  font-family: "Roboto";
-  font-style: italic;
-  font-weight: 500;
-  src: local("Roboto Medium Italic"), local("Roboto-MediumItalic"), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51S7ACc5CsTYl4BOQ3o.woff2) format("woff2");
-  unicode-range: U+0370-03FF;
-  font-display: swap;
-}
-
-/* vietnamese */
-@font-face {
-  font-family: "Roboto";
-  font-style: italic;
-  font-weight: 500;
-  src: local("Roboto Medium Italic"), local("Roboto-MediumItalic"), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51S7ACc1CsTYl4BOQ3o.woff2) format("woff2");
-  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
-  font-display: swap;
-}
-
-/* latin-ext */
-@font-face {
-  font-family: "Roboto";
-  font-style: italic;
-  font-weight: 500;
-  src: local("Roboto Medium Italic"), local("Roboto-MediumItalic"), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51S7ACc0CsTYl4BOQ3o.woff2) format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  font-display: swap;
-}
-
-/* latin */
-@font-face {
-  font-family: "Roboto";
-  font-style: italic;
-  font-weight: 500;
-  src: local("Roboto Medium Italic"), local("Roboto-MediumItalic"), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51S7ACc6CsTYl4BO.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  font-display: swap;
-}
-
-/* cyrillic-ext */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  src: local("Roboto Medium"), local("Roboto-Medium"), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format("woff2");
-  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-  font-display: swap;
-}
-
-/* cyrillic */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  src: local("Roboto Medium"), local("Roboto-Medium"), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format("woff2");
-  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-  font-display: swap;
-}
-
-/* greek-ext */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  src: local("Roboto Medium"), local("Roboto-Medium"), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format("woff2");
-  unicode-range: U+1F00-1FFF;
-  font-display: swap;
-}
-
-/* greek */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  src: local("Roboto Medium"), local("Roboto-Medium"), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format("woff2");
-  unicode-range: U+0370-03FF;
-  font-display: swap;
-}
-
-/* vietnamese */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  src: local("Roboto Medium"), local("Roboto-Medium"), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format("woff2");
-  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
-  font-display: swap;
-}
-
-/* latin-ext */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  src: local("Roboto Medium"), local("Roboto-Medium"), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format("woff2");
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-  font-display: swap;
-}
-
-/* latin */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  src: local("Roboto Medium"), local("Roboto-Medium"), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  font-display: swap;
-}
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 body {
   background: #ffffff;
   padding: 0 24px 20px;
   margin: 0;
-  color: #3E4148;
+  color: #3e4148;
   line-height: 1.6;
   text-align: center;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family:
+    "Roboto",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
   font-size: 14px;
   font-weight: normal;
   letter-spacing: 0.01em;
@@ -297,7 +28,17 @@ body {
 }
 
 textarea {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family:
+    "Roboto",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
   min-height: 48px;
 }
 
@@ -399,6 +140,8 @@ input[type="tel"] {
   text-transform: none;
   text-align: left;
   transition: 0.3s border;
+  padding-left: var(--spacing__12) !important;
+  padding-right: var(--spacing__4) !important;
 }
 
 .custom-field-type-number input[type="number"]::-webkit-outer-spin-button,
@@ -675,7 +418,7 @@ input + .placeholder {
   left: 0;
   right: 0;
   top: 0;
-  height: 48px;
+  height: 56px;
 }
 
 .input + .placeholder > t,
@@ -1030,7 +773,7 @@ input[type="password"].custom-field-input,
 }
 
 .custom-field-input::-moz-placeholder {
-  color: rgba(15, 15, 21, .3);
+  color: rgba(15, 15, 21, 0.3);
   opacity: 1;
 }
 
@@ -1092,7 +835,7 @@ input[type="password"].custom-field-input,
 
 .custom-field-type-single_select_list .custom-field-label::before,
 .custom-field-type-multi_select_list .custom-field-label::before {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIxSURBVEiJndVLS1VRFAfwnw8yaqLQpHwUzpsqFPgRJGmSYfQaFDRNmvSgSaWTghxFhQ20aYU2aGzDkPwAUdI1AoNAnJR5G+x1uttzr3rzD4tz9nrttddea22aQwcmsRI0gX1N2jaFSVRL9GCvzrowhL6MtxJOT+Bk/Fcy+SBGcGQ356NYCwebmMJwA4efg3cZb9VOtY4z2znvDoVNLMR/npKJTPdmSfYNc2G7Flmow0goz8W6H8/wGjfQUtK/gGncQWfwFsLHUKMNBrNoOhsp7IJ+6dR/0Lud0nxscncPGzwP28c5s7Wk9DK+fSV+T8hWpMueDV6OQ/F9V965DeNYwkZEcS2T92JVfR+sljYZz2RbmvF2JviBh2gvnaoqlWNPUFGas5lei9R8FaVmXI7FcMlxgcIgv7he9b2R418ztmJ/MD9JKdoO1R1kZWy526kw/o1FKZc5ZtVS1BtUpGimpHtLrcuruAcH8dTWzr2aGfVo7pIvZrIK7itN3HacC4VXpch64iSVoBn1ZTodtpfKTgtsSN1MqqYcX3HWzliO72mp6epwVBpW61Lb/y86pTFTxUDBzG/7mFTLi1JFdUoj4wXON3B4BW8i2n78xIeQdTeKoEsatZvSRC2iKehRpjtekq3jvVoGDm93zFFbq2keY/gV1BF6H0M+JpX5ZqzX7PDgFDgivQ0DGW8pHJzCcaln1tWKpE96A/Yy5sF19X3wZK/OGqFNeia/4Ls08w80Y/gX6KK9ZYZNWiIAAAAASUVORK5CYII=');
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIxSURBVEiJndVLS1VRFAfwnw8yaqLQpHwUzpsqFPgRJGmSYfQaFDRNmvSgSaWTghxFhQ20aYU2aGzDkPwAUdI1AoNAnJR5G+x1uttzr3rzD4tz9nrttddea22aQwcmsRI0gX1N2jaFSVRL9GCvzrowhL6MtxJOT+Bk/Fcy+SBGcGQ356NYCwebmMJwA4efg3cZb9VOtY4z2znvDoVNLMR/npKJTPdmSfYNc2G7Flmow0goz8W6H8/wGjfQUtK/gGncQWfwFsLHUKMNBrNoOhsp7IJ+6dR/0Lud0nxscncPGzwP28c5s7Wk9DK+fSV+T8hWpMueDV6OQ/F9V965DeNYwkZEcS2T92JVfR+sljYZz2RbmvF2JviBh2gvnaoqlWNPUFGas5lei9R8FaVmXI7FcMlxgcIgv7he9b2R418ztmJ/MD9JKdoO1R1kZWy526kw/o1FKZc5ZtVS1BtUpGimpHtLrcuruAcH8dTWzr2aGfVo7pIvZrIK7itN3HacC4VXpch64iSVoBn1ZTodtpfKTgtsSN1MqqYcX3HWzliO72mp6epwVBpW61Lb/y86pTFTxUDBzG/7mFTLi1JFdUoj4wXON3B4BW8i2n78xIeQdTeKoEsatZvSRC2iKehRpjtekq3jvVoGDm93zFFbq2keY/gV1BF6H0M+JpX5ZqzX7PDgFDgivQ0DGW8pHJzCcaln1tWKpE96A/Yy5sF19X3wZK/OGqFNeia/4Ls08w80Y/gX6KK9ZYZNWiIAAAAASUVORK5CYII=");
 }
 
 .custom-field-type-single_select_list .custom-field-label.activated::before,
@@ -1198,7 +941,7 @@ i.icon {
 }
 
 .icon-close {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAC5SURBVHgBdVFLDoIwEJ2pGneFBUSXXIUbcBM4GjfwKHbpsksTYuo8W4XB9iVNyvu0rwORwNp2rOu6owKgWXsZ00czVVUbZN1zIXDQ4JHQZIiOs/BOVhfC6bYNYQ8OGjzG8MxRuIrw+gnMSw9+a2Y+9N4/HK+n6VCilRkE674qRHszYPQTn/QPzXHpgbrSIrf4tdLejBrx0XoQCHHO/O2cmx7+w5AzA58xxttc9JyH1L+ZcBoVAA0e7N/BTWeqxxyiEAAAAABJRU5ErkJggg==');
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAC5SURBVHgBdVFLDoIwEJ2pGneFBUSXXIUbcBM4GjfwKHbpsksTYuo8W4XB9iVNyvu0rwORwNp2rOu6owKgWXsZ00czVVUbZN1zIXDQ4JHQZIiOs/BOVhfC6bYNYQ8OGjzG8MxRuIrw+gnMSw9+a2Y+9N4/HK+n6VCilRkE674qRHszYPQTn/QPzXHpgbrSIrf4tdLejBrx0XoQCHHO/O2cmx7+w5AzA58xxttc9JyH1L+ZcBoVAA0e7N/BTWeqxxyiEAAAAABJRU5ErkJggg==");
 }
 
 .icon-dropdown {
@@ -1231,15 +974,15 @@ button.pn-icon {
 }
 
 .pn-icon--white-left {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABbSURBVEiJ7dSxCYBAEETRhz0o2n8pZmqkgeVo4AUiGCh3iLC/gD/DLgxBcEODCX0p+YINQ255jTnJV7QhLy6HMckXx4MfUeVu84briboI+Tyk6FScQ4qNXfAzdve+IhBZVJm7AAAAAElFTkSuQmCC');
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABbSURBVEiJ7dSxCYBAEETRhz0o2n8pZmqkgeVo4AUiGCh3iLC/gD/DLgxBcEODCX0p+YINQ255jTnJV7QhLy6HMckXx4MfUeVu84briboI+Tyk6FScQ4qNXfAzdve+IhBZVJm7AAAAAElFTkSuQmCC");
 }
 
 .pn-icon--white-right {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABYSURBVEiJ7dQxCoBADETRh3dw0fsfxU6stPA4a7FWFjYSRcg/wPyQhCFJMGFBiRLMqNiiJD3WU7JjTMnnkqIdvGoPcEsXMcETrisaMjw8nBeqIrzskp9zAHz0Ig+Mh5CjAAAAAElFTkSuQmCC');
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAABYSURBVEiJ7dQxCoBADETRh3dw0fsfxU6stPA4a7FWFjYSRcg/wPyQhCFJMGFBiRLMqNiiJD3WU7JjTMnnkqIdvGoPcEsXMcETrisaMjw8nBeqIrzskp9zAHz0Ig+Mh5CjAAAAAElFTkSuQmCC");
 }
 
 .pn-icon--x {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACGSURBVEiJ7ZRBCoAgEEVf3SGp+x/FXbQqKKjD2EahwGzU2pR/65/3QIaBkt9GAwOgBF1luzpG0AMGmG4kynaMnRGnAUY7uACdoNPGCO4k2fCQ5DG4T7IC85Pwo8SBDbBJ4XWGtMqYPSX0Rb7tSoa7P5escDL86i1aIlnFLMnrp+L1Y1fyoezEzUJHf36Q2AAAAABJRU5ErkJggg==');
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACGSURBVEiJ7ZRBCoAgEEVf3SGp+x/FXbQqKKjD2EahwGzU2pR/65/3QIaBkt9GAwOgBF1luzpG0AMGmG4kynaMnRGnAUY7uACdoNPGCO4k2fCQ5DG4T7IC85Pwo8SBDbBJ4XWGtMqYPSX0Rb7tSoa7P5escDL86i1aIlnFLMnrp+L1Y1fyoezEzUJHf36Q2AAAAABJRU5ErkJggg==");
 }
 
 .pn-icon--search {
@@ -1292,7 +1035,17 @@ button.pn-icon {
 .pn-datepicker .pn-dp-calendar__daylabel,
 .pn-datepicker .pn-dp-cell {
   color: #3e4148;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family:
+    "Roboto",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
   font-size: 12px;
   font-weight: normal;
   line-height: 24px;
@@ -1546,7 +1299,17 @@ button.pn-icon {
   line-height: 1em;
   font-weight: 300;
   letter-spacing: 0.025em;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family:
+    "Roboto",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
   text-transform: none;
   border: 1px solid #eceef1;
   border-radius: 0;
@@ -1695,7 +1458,17 @@ button.pn-icon {
   justify-content: center;
   padding-top: 44px;
   padding-bottom: 20px;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family:
+    "Roboto",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
 }
 
 .with-logo .pn-welcome-back-email__content {
@@ -1759,7 +1532,17 @@ button.pn-icon {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family:
+    "Roboto",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
 }
 
 .pn-welcome-back-email__action {
@@ -1796,7 +1579,17 @@ button.pn-icon {
 
 .pn-welcome-back-email__link {
   display: inline;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family:
+    "Roboto",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 24px;
@@ -1820,7 +1613,7 @@ button.pn-icon {
 }
 
 .round-social-button {
-  margin: 16px 8px 0 8px
+  margin: 16px 8px 0 8px;
 }
 
 .round-social-button:hover,
@@ -2066,7 +1859,7 @@ language-selector {
   text-overflow: ellipsis;
   overflow: hidden;
   text-align: left;
-  color: #0F0F15;
+  color: #0f0f15;
   display: block;
   padding-top: 12px;
   margin-top: 8px;
@@ -2080,11 +1873,11 @@ language-selector {
   background: rgb(59, 103, 178);
 }
 
-.pn-scale-field-dividers[disabled=true]::before {
+.pn-scale-field-dividers[disabled="true"]::before {
   background: rgb(157, 179, 217);
 }
 
-.pn-scale-field-dividers[disabled=true]::after {
+.pn-scale-field-dividers[disabled="true"]::after {
   background: rgb(235, 240, 247);
 }
 
@@ -2097,7 +1890,7 @@ div[formStepTitle] {
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
-  color: #0F0F15;
+  color: #0f0f15;
   text-align: left;
 }
 
@@ -2311,7 +2104,6 @@ body[dir="rtl"] .info-message > span {
   unicode-bidi: plaintext;
 }
 
-
 body[dir="rtl"] .pnid-phone-number-wrapper input[type="tel"].custom-field-input {
   padding-right: 90px;
   padding-left: 16px;
@@ -2360,7 +2152,288 @@ body[dir="rtl"] .pn-scale-custom-field-label {
 .ol-template *,
 .ol-template ::before,
 .ol-template::after {
-  margin: 0 0 0 0 !important;
-  padding: 0 0 0 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
   line-height: 100% !important;
+}
+
+/* ============================================================================
+   DESIGN SYSTEM OVERRIDES - Piano ID Login Page Migration
+   Aligning Piano ID login page styles with Õhtuleht design system
+   ============================================================================ */
+
+/* Import design system fonts */
+
+/* Design System Tokens - CSS Custom Properties */
+:root {
+  --black: #000000;
+  --borderwidth__0: 0px;
+  --borderwidth__1: 1px;
+  --borderwidth__2: 2px;
+  --borderwidth__4: 4px;
+  --borderwidth__8: 8px;
+  --font__family__fira: "Fira Sans Condensed", sans-serif;
+  --font__family__inter: "Inter", sans-serif;
+  --font__family__mono: "Fira Mono", monospace;
+  --font__family__serif: "Georgia", serif;
+  --font__size__2xl: 24px;
+  --font__size__3xl: 30px;
+  --font__size__4xl: 36px;
+  --font__size__5xl: 48px;
+  --font__size__6xl: 60px;
+  --font__size__7xl: 72px;
+  --font__size__8xl: 96px;
+  --font__size__9xl: 128px;
+  --font__size__base: 16px;
+  --font__size__lg: 18px;
+  --font__size__sm: 14px;
+  --font__size__xl: 20px;
+  --font__size__xs: 12px;
+  --font__style__italic: italic;
+  --font__style__notitalic: normal;
+  --font__weight__black: 900;
+  --font__weight__bold: 700;
+  --font__weight__extrabold: 800;
+  --font__weight__extralight: 200;
+  --font__weight__light: 300;
+  --font__weight__medium: 500;
+  --font__weight__normal: 400;
+  --font__weight__semibold: 600;
+  --font__weight__thin: 100;
+  --ol__cream__100: #ffebc4;
+  --ol__cream__200: #ffd688;
+  --ol__cream__300: #ffbc4a;
+  --ol__cream__400: #ffa220;
+  --ol__cream__50: #fff8eb;
+  --ol__cream__500: #f97d07;
+  --ol__cream__600: #dd5902;
+  --ol__cream__700: #b73a06;
+  --ol__cream__800: #942c0c;
+  --ol__cream__900: #7a250d;
+  --ol__cream__950: #461102;
+  --ol__monochrome__100: #e5e8e8;
+  --ol__monochrome__200: #cdd3d4;
+  --ol__monochrome__300: #aab3b6;
+  --ol__monochrome__400: #808d90;
+  --ol__monochrome__50: #f5f6f6;
+  --ol__monochrome__500: #657275;
+  --ol__monochrome__600: #566064;
+  --ol__monochrome__700: #4a5254;
+  --ol__monochrome__800: #414749;
+  --ol__monochrome__900: #3a3e3f;
+  --ol__monochrome__950: #17191a;
+  --ol__red__100: #ffdddf;
+  --ol__red__200: #ffc1c5;
+  --ol__red__300: #ff959c;
+  --ol__red__400: #ff5964;
+  --ol__red__50: #fff0f1;
+  --ol__red__500: #ff2634;
+  --ol__red__600: #fc0616;
+  --ol__red__700: #e3000f;
+  --ol__red__800: #af0510;
+  --ol__red__900: #900c15;
+  --ol__red__950: #500005;
+  --ol__yellow__100: #fdffc1;
+  --ol__yellow__200: #ffff86;
+  --ol__yellow__300: #fff641;
+  --ol__yellow__400: #ffe80d;
+  --ol__yellow__50: #ffffe7;
+  --ol__yellow__500: #fcd700;
+  --ol__yellow__600: #d1a000;
+  --ol__yellow__700: #a67302;
+  --ol__yellow__800: #89590a;
+  --ol__yellow__900: #74490f;
+  --ol__yellow__950: #442604;
+  --radius__2xl: 16px;
+  --radius__3xl: 24px;
+  --radius__4xl: 32px;
+  --radius__full: 9999px;
+  --radius__lg: 8px;
+  --radius__md: 6px;
+  --radius__none: 0px;
+  --radius__sm: 4px;
+  --radius__xl: 12px;
+  --radius__xs: 2px;
+  --spacing__0: 0px;
+  --spacing__1: 4px;
+  --spacing__10: 40px;
+  --spacing__11: 44px;
+  --spacing__12: 48px;
+  --spacing__14: 56px;
+  --spacing__16: 64px;
+  --spacing__2: 8px;
+  --spacing__20: 80px;
+  --spacing__24: 96px;
+  --spacing__28: 112px;
+  --spacing__3: 12px;
+  --spacing__32: 128px;
+  --spacing__36: 144px;
+  --spacing__4: 16px;
+  --spacing__40: 160px;
+  --spacing__44: 176px;
+  --spacing__48: 192px;
+  --spacing__5: 20px;
+  --spacing__52: 208px;
+  --spacing__56: 224px;
+  --spacing__6: 24px;
+  --spacing__60: 240px;
+  --spacing__64: 256px;
+  --spacing__7: 28px;
+  --spacing__72: 288px;
+  --spacing__8: 32px;
+  --spacing__80: 320px;
+  --spacing__9: 36px;
+  --spacing__96: 384px;
+  --white: #ffffff;
+}
+
+/* .lead → Design System .pn-modal__title (Primary heading) */
+.ol-template .lead {
+  font-family: var(--font__family__fira);
+  font-size: var(--font__size__2xl);
+  font-weight: var(--font__weight__bold);
+  line-height: 1.2;
+  color: var(--ol__red__700);
+  margin-bottom: var(--spacing__2) !important;
+  text-transform: none;
+}
+
+/* .sub-lead → Design System .pn-modal__text (Helper/body text) */
+.ol-template .sub-lead {
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__base);
+  font-weight: var(--font__weight__medium);
+  line-height: 1.35;
+  color: var(--ol__monochrome__950);
+  opacity: 0.7;
+  margin-top: 0;
+  margin-bottom: var(--spacing__4) !important;
+  text-transform: none;
+}
+
+/* Input fields → Design System .input (Form inputs) */
+.ol-template input[type="text"],
+.ol-template input[type="number"],
+.ol-template input[type="date"],
+.ol-template input[type="password"],
+.ol-template input[type="tel"] {
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__base);
+  font-weight: var(--font__weight__medium);
+  line-height: 1.35;
+  height: 56px;
+  padding: 0 var(--spacing__3);
+  border: 1px solid var(--ol__monochrome__200);
+  border-radius: var(--radius__lg);
+  color: var(--ol__monochrome__950);
+  background: var(--white);
+  transition: border-color 125ms ease-in-out;
+  outline: none;
+  margin-bottom: var(--spacing__1) !important;
+}
+
+.ol-template input[type="text"]:focus,
+.ol-template input[type="number"]:focus,
+.ol-template input[type="date"]:focus,
+.ol-template input[type="password"]:focus,
+.ol-template input[type="tel"]:focus {
+  border-color: var(--ol__red__700);
+}
+
+.ol-template input[type="text"]::placeholder,
+.ol-template input[type="password"]::placeholder,
+.ol-template input[type="tel"]::placeholder {
+  color: var(--ol__monochrome__200);
+}
+
+.ol-template .placeholder .icon {
+  margin-left: var(--spacing__4) !important;
+}
+
+/* Adjust input-group with icons for new input height */
+.ol-template .input-group.with-icon input[type="text"],
+.ol-template .input-group.with-icon input[type="password"] {
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.ol-template .input-group .float,
+.ol-template .custom-field .float {
+  top: 18px; /* Adjusted for 56px height input (56/2 - 8 = 20 approx) */
+}
+
+/* .link.red-link → Design System .link (Alert/recovery link) */
+.ol-template .link.red-link,
+.ol-template a.link.red-link {
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__base);
+  font-weight: var(--font__weight__medium);
+  line-height: 1.35;
+  color: var(--ol__red__700);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 125ms ease-in-out;
+}
+
+.ol-template .password-restore a {
+  margin-top: var(--spacing__2) !important;
+  margin-bottom: var(--spacing__6) !important;
+  display: block;
+}
+
+.ol-template .link.red-link:hover,
+.ol-template .link.red-link:active,
+.ol-template a.link.red-link:hover,
+.ol-template a.link.red-link:active {
+  color: var(--ol__red__800);
+}
+
+/* .btn.prime → Design System .btn.btn--red (Primary CTA button) */
+.ol-template .btn.prime,
+.ol-template button.btn.prime {
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__base);
+  font-weight: var(--font__weight__bold);
+  line-height: 1.35;
+  height: 56px;
+  padding: 0 32px;
+  background: var(--ol__red__700);
+  border: none;
+  border-radius: var(--radius__sm);
+  color: var(--white);
+  cursor: pointer;
+  text-align: center;
+  text-transform: none;
+  transition: background-color 125ms ease-in-out;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: var(--spacing__4) !important;
+}
+
+.ol-template .btn.prime:hover,
+.ol-template .btn.prime:active,
+.ol-template button.btn.prime:hover,
+.ol-template button.btn.prime:active {
+  background: var(--ol__red__800);
+  border-color: transparent;
+}
+
+/* .final.bolder → Design System .pn-modal__subtitle (Emphasized secondary text) */
+.ol-template .final.bolder,
+.ol-template p.final.bolder {
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__base);
+  font-weight: var(--font__weight__bold);
+  line-height: 1.35;
+  color: #000000;
+  margin-bottom: var(--spacing__2) !important;
+}
+
+/* .final (without bolder) - keep subtle for context text */
+.ol-template .final:not(.bolder),
+.ol-template p.final:not(.bolder) {
+  font-family: var(--font__family__inter);
+  color: var(--ol__monochrome__500);
 }

@@ -29,11 +29,12 @@
         </div>
       </ng-container>
 
-      <p class="" style="font-family: &quot;Roboto&quot;; font-style: normal; font-weight: 400; font-size: 16px; margin: 0; margin-bottom: 8px">või kasuta konto loomiseks e-posti:</p>
-
+      <p class="sub-lead">või kasuta konto loomiseks e-posti:</p>
+      <!--
       <p class="sub-lead">
         <span *showIfSocialAuthNotAvailable><t>Sign up a new account.</t></span>
       </p>
+      -->
       <custom-fields-multi-step-indicator *showIfMultistep></custom-fields-multi-step-indicator>
       <div formStepTitle *showIfMultistep></div>
 
@@ -80,9 +81,9 @@
           </p>
         </ng-container>
       </ng-container>
-      <span
+      <p style="color: var(--ol__monochrome__500); font-weight: var(--font__weight__medium); font-size: var(--font__size__xs); line-height: 1.35 !important; font-family: var(--font__family__inter); margin-bottom: var(--spacing__4) !important;"
         >Jätkates nõustun, et olen tutvunud <a href="https://www.ohtulehtkirjastus.ee/uldtingimused/" target="_blank" rel="noopener noreferrer" style="color: #e3000f; text-decoration: underline">üldtingimustega</a> ja
-        <a href="https://www.ohtulehtkirjastus.ee/andmekaitsetingimused/" target="_blank" rel="noopener noreferrer" style="color: #e3000f; text-decoration: underline">andmekaitsetingimustega</a> ning et minu andmeid kasutatakse konto loomiseks ja säilitamiseks.</span
+        <a href="https://www.ohtulehtkirjastus.ee/andmekaitsetingimused/" target="_blank" rel="noopener noreferrer" style="color: #e3000f; text-decoration: underline">andmekaitsetingimustega</a> ning et minu andmeid kasutatakse konto loomiseks ja säilitamiseks.</p
       >
       <custom-fields></custom-fields>
 
@@ -110,6 +111,7 @@
         </button>
       </p>
 
+      <!--
       <div *showIfMultistep class="multi-step-actions">
         <ng-container *hideIfFirstStep>
           <button actionStepBack *showIfAuthCompleted class="btn prime outline">
@@ -121,10 +123,8 @@
           <t *showIfLastStep>Finish</t>
         </button>
       </div>
-
+-->
       <errors-list></errors-list>
-
-      <div class="divider"></div>
 
       <ng-container *hideIfAuthCompleted>
         <p class="final bolder" *hideIfCreatePasswordlessUser>

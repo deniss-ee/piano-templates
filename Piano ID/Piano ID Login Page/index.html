@@ -18,10 +18,6 @@
     <div class="ol-template">
       <p class="lead"><t>Login into your account.</t></p>
 
-      <p class="sub-lead">
-        <span *showIfSocialAuthNotAvailable><t>Login into your account.</t></span>
-      </p>
-
       <errors-list></errors-list>
 
       <div *showIfSocialAuthAvailable class="social-wrapper">
@@ -30,7 +26,7 @@
         </div>
       </div>
 
-      <p>või kasuta sisenemiseks e-posti:</p>
+      <p class="sub-lead">või kasuta sisenemiseks e-posti:</p>
 
       <p class="input-group with-icon">
         <input fieldLoginEmail type="text" pn-autofocus />
@@ -50,7 +46,7 @@
       </p>
 
       <p class="cf remember-and-restore" *hideIfPasswordlessOrCreatePasswordlessUser>
-        <span class="pull-left">
+        <span class="password-restore">
           <a showScreen="restore" class="link red-link"><t>I forgot my password</t></a>
         </span>
       </p>
@@ -63,8 +59,6 @@
           <span *showIfPasswordlessOrCreatePasswordlessUser><t>Next</t></span>
         </button>
       </p>
-
-      <div class="divider"></div>
 
       <ng-container *hideIfAuthCompleted>
         <p class="final bolder" *hideIfCreatePasswordlessUser>
