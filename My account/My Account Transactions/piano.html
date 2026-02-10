@@ -1,0 +1,129 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../my-account-layout.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="transactions-container">
+      <!-- Header Section -->
+      <header class="transactions-header">
+        <span class="section-text">
+          <t context="checkout.platform">Transactions</t> ({{transactions.length}})
+        </span>
+      </header>
+      
+      <!-- Main Content -->
+      <main class="scrollable-content">
+        <!-- Column Headers (Desktop) 
+        <div class="transactions-columns" ng-show="transactions.length > 0">
+          <div class="transactions-columns-inner">
+            <div class="column-header column-header--date">
+              <a ng-click="sortByDate()" 
+                 ng-class="{descending: reverse ===false, ascending: reverse===true}" 
+                 class="transaction-sort-header">
+                <t context="checkout.platform">Date of purchase</t>
+              </a>
+            </div>
+            <div class="column-header column-header--resource">
+              <t context="checkout.platform">Resource</t>
+            </div>
+            <div class="column-header column-header--status">
+              <t context="checkout.platform">Status</t>
+            </div>
+            <div class="column-header column-header--amount">
+              <t context="checkout.platform">Amount</t>
+            </div>
+            <div class="column-header column-header--actions">
+              <span class="sr-only">Actions</span>
+            </div>
+          </div>
+        </div>
+        -->
+        <!-- Transactions List -->
+        <div class="transactions-list" ng-show="transactions.length > 0">
+          <!-- Transaction Card (ng-repeat) -->
+          <article class="transaction-card" ng-repeat="transaction in transactions | orderBy:'date':reverse">
+            <div class="transaction-card-inner">
+              <!-- Date Section -->
+              <div class="transaction-date-section">
+                <img ng-class="{'logo--base': !transaction.customResourceImage}" 
+                     class="transaction-logo" 
+                     width="50" 
+                     height="50" 
+                     ng-src="{{transaction.resourceImageUrl}}"
+                     alt="" />
+                <div class="transaction-date-info">
+                  <div ng-class="{'transaction-date--base': !transaction.customResourceImage}" 
+                       class="transaction-date">
+                    {{transaction.date | date: 'mediumDate'}}
+                    {{transaction.date | date: 'shortTime'}}
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Details Section -->
+              <div class="transaction-details">
+                <!-- Resource -->
+                <div class="transaction-detail-row transaction-detail-row--resource trasnaction-title">
+                  <span class="transaction-detail-label">Resource:</span>
+                  <div class="transaction-detail-value">
+                    <div class="resource-title">
+                      {{transaction.termName}}
+                    </div>
+                    <div class="expiration-date">
+                      {{transaction.resourceName}}
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Status -->
+                <div class="transaction-detail-row transaction-detail-row--status">
+                  <span class="transaction-detail-label">Status:</span>
+                  <div class="transaction-detail-value">
+                    <div class="resource-title">
+                      {{transaction.status | capitalize}}
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Amount -->
+                <div class="transaction-detail-row transaction-detail-row--amount">
+                  <span class="transaction-detail-label">Amount:</span>
+                  <div class="transaction-detail-value">
+                    <div class="resource-title">
+                      {{transaction.price}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Actions -->
+              <div ng-show="canResendReceipt" class="transaction-actions">
+                <a href="#" 
+                   ng-click="resendReceipt(transaction)" 
+                   class="icon-mail myaccount-action-icon" 
+                   title="Send Email"
+                   aria-label="Send email receipt"></a>
+                <a href="#" 
+                   ng-click="downloadTransactionInfo(transaction)" 
+                   class="icon-download myaccount-action-icon" 
+                   title="Download PDF"
+                   aria-label="Download PDF receipt"></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

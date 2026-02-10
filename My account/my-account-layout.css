@@ -1,0 +1,446 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+:root {
+  --black: #000000;
+  --borderwidth__0: 0px;
+  --borderwidth__1: 1px;
+  --borderwidth__2: 2px;
+  --borderwidth__4: 4px;
+  --borderwidth__8: 8px;
+  --font__family__fira: "Fira Sans Condensed", sans-serif;
+  --font__family__inter: "Inter", sans-serif;
+  --font__family__mono: "Fira Mono", monospace;
+  --font__family__serif: "Georgia", serif;
+  --font__size__2xl: 24px;
+  --font__size__3xl: 30px;
+  --font__size__4xl: 36px;
+  --font__size__5xl: 48px;
+  --font__size__6xl: 60px;
+  --font__size__7xl: 72px;
+  --font__size__8xl: 96px;
+  --font__size__9xl: 128px;
+  --font__size__base: 16px;
+  --font__size__lg: 18px;
+  --font__size__sm: 14px;
+  --font__size__xl: 20px;
+  --font__size__xs: 12px;
+  --font__style__italic: italic;
+  --font__style__notitalic: normal;
+  --font__weight__black: 900;
+  --font__weight__bold: 700;
+  --font__weight__extrabold: 800;
+  --font__weight__extralight: 200;
+  --font__weight__light: 300;
+  --font__weight__medium: 500;
+  --font__weight__normal: 400;
+  --font__weight__semibold: 600;
+  --font__weight__thin: 100;
+  --ol__cream__100: #ffebc4;
+  --ol__cream__200: #ffd688;
+  --ol__cream__300: #ffbc4a;
+  --ol__cream__400: #ffa220;
+  --ol__cream__50: #fff8eb;
+  --ol__cream__500: #f97d07;
+  --ol__cream__600: #dd5902;
+  --ol__cream__700: #b73a06;
+  --ol__cream__800: #942c0c;
+  --ol__cream__900: #7a250d;
+  --ol__cream__950: #461102;
+  --ol__monochrome__100: #e5e8e8;
+  --ol__monochrome__200: #cdd3d4;
+  --ol__monochrome__300: #aab3b6;
+  --ol__monochrome__400: #808d90;
+  --ol__monochrome__50: #f5f6f6;
+  --ol__monochrome__500: #657275;
+  --ol__monochrome__600: #566064;
+  --ol__monochrome__700: #4a5254;
+  --ol__monochrome__800: #414749;
+  --ol__monochrome__900: #3a3e3f;
+  --ol__monochrome__950: #17191a;
+  --ol__red__100: #ffdddf;
+  --ol__red__200: #ffc1c5;
+  --ol__red__300: #ff959c;
+  --ol__red__400: #ff5964;
+  --ol__red__50: #fff0f1;
+  --ol__red__500: #ff2634;
+  --ol__red__600: #fc0616;
+  --ol__red__700: #e3000f;
+  --ol__red__800: #af0510;
+  --ol__red__900: #900c15;
+  --ol__red__950: #500005;
+  --ol__yellow__100: #fdffc1;
+  --ol__yellow__200: #ffff86;
+  --ol__yellow__300: #fff641;
+  --ol__yellow__400: #ffe80d;
+  --ol__yellow__50: #ffffe7;
+  --ol__yellow__500: #fcd700;
+  --ol__yellow__600: #d1a000;
+  --ol__yellow__700: #a67302;
+  --ol__yellow__800: #89590a;
+  --ol__yellow__900: #74490f;
+  --ol__yellow__950: #442604;
+  --radius__2xl: 16px;
+  --radius__3xl: 24px;
+  --radius__4xl: 32px;
+  --radius__full: 9999px;
+  --radius__lg: 8px;
+  --radius__md: 6px;
+  --radius__none: 0px;
+  --radius__sm: 4px;
+  --radius__xl: 12px;
+  --radius__xs: 2px;
+  --spacing__0: 0px;
+  --spacing__1: 4px;
+  --spacing__10: 40px;
+  --spacing__11: 44px;
+  --spacing__12: 48px;
+  --spacing__14: 56px;
+  --spacing__16: 64px;
+  --spacing__2: 8px;
+  --spacing__20: 80px;
+  --spacing__24: 96px;
+  --spacing__28: 112px;
+  --spacing__3: 12px;
+  --spacing__32: 128px;
+  --spacing__36: 144px;
+  --spacing__4: 16px;
+  --spacing__40: 160px;
+  --spacing__44: 176px;
+  --spacing__48: 192px;
+  --spacing__5: 20px;
+  --spacing__52: 208px;
+  --spacing__56: 224px;
+  --spacing__6: 24px;
+  --spacing__60: 240px;
+  --spacing__64: 256px;
+  --spacing__7: 28px;
+  --spacing__72: 288px;
+  --spacing__8: 32px;
+  --spacing__80: 320px;
+  --spacing__9: 36px;
+  --spacing__96: 384px;
+  --white: #ffffff;
+}
+
+/* ============================================================================
+         FLEXBOX LAYOUT STYLES - My Account Transactions
+         Modern semantic layout replacing table-based structure
+         ============================================================================ */
+
+/* Transactions Container */
+.transactions-container {
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Section Header */
+.transactions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  border: none;
+}
+
+.section-text {
+  margin: 0 !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  font-family: var(--font__family__inter) !important;
+}
+
+/* Scrollable Content Area */
+.scrollable-content {
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  max-height: 600px;
+  border: none;
+  overflow-y: auto;
+}
+
+/* Column Headers - Desktop Only */
+.transactions-columns {
+  display: none; /* Hidden on mobile */
+  padding: 12px 16px;
+  border-radius: 4px;
+  background: #f5f6f6;
+}
+
+.transactions-columns-inner {
+  gap: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.column-header {
+  color: #3e4148;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.column-header--date {
+  gap: 4px;
+  display: flex;
+  flex: 0 0 200px;
+  align-items: center;
+}
+
+.column-header--resource {
+  flex: 1;
+  min-width: 0;
+}
+
+.column-header--status {
+  flex: 0 0 120px;
+}
+
+.column-header--amount {
+  flex: 0 0 100px;
+  text-align: right;
+}
+
+.column-header--actions {
+  flex: 0 0 80px;
+}
+
+/* Sort Header Link */
+.transaction-sort-header {
+  gap: 4px;
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.transaction-sort-header::after {
+  opacity: 0.5;
+  content: "↕";
+}
+
+.transaction-sort-header.ascending::after {
+  opacity: 1;
+  content: "↑";
+}
+
+.transaction-sort-header.descending::after {
+  opacity: 1;
+  content: "↓";
+}
+
+/* Transaction List */
+.transactions-list {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Transaction Card */
+.transaction-card {
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: #ffffff;
+  transition: box-shadow 0.2s ease;
+}
+
+/* Transaction Card Inner Layout - Mobile First */
+.transaction-card-inner {
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Transaction Date Section */
+.transaction-date-section {
+  gap: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.transaction-logo {
+  object-fit: cover;
+  display: none;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+}
+
+.logo--base {
+  /* Additional styling if needed */
+}
+
+.transaction-date-info {
+  gap: 4px;
+  display: flex;
+  display: none;
+  flex-direction: column;
+}
+
+.transaction-date {
+  color: #3e4148;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.transaction-date--base {
+  /* Additional styling if needed */
+}
+
+/* Transaction Details Section */
+.transaction-details {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-detail-row {
+  gap: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.transaction-detail-label {
+  flex-shrink: 0;
+  color: #808d90;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.transaction-detail-value {
+  color: #3e4148;
+  font-size: 14px;
+  text-align: left;
+}
+
+.resource-title {
+  margin-bottom: 2px;
+  color: var(--ol__red__700) !important;
+  font-weight: 600 !important;
+  font-size: var(--font__size__lg);
+  font-family: var(--font__family__fira);
+}
+
+.expiration-date {
+  color: var(--ol__monochrome__800);
+  font-size: var(--font__size__xs);
+  font-family: var(--font__family__inter);
+}
+
+.trasnaction-title {
+  /* Preserve original class name for compatibility */
+}
+
+/* Transaction Actions */
+.transaction-actions {
+  gap: var(--spacing__2);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.myaccount-action-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  color: #3e4148;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+    margin: 0;
+    background-position: center;
+}
+
+.myaccount-action-icon:hover {
+
+}
+.transaction-detail-row--status {
+  display: none;
+}
+
+@media (min-width: 631px) {
+  .transaction-card {
+    padding: 12px 16px;
+  }
+
+  .transaction-card-inner {
+    gap: 16px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .transaction-date-section {
+    display: none;
+    flex: 0 0 200px;
+  }
+
+  .transaction-details {
+    gap: 16px;
+    flex: 1;
+    flex-direction: row;
+    min-width: 0;
+  }
+
+  .transaction-detail-row {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .transaction-detail-row--resource {
+    flex: 2;
+  }
+
+  .transaction-detail-row--status {
+    flex: 0 0 120px;
+  }
+
+  .transaction-detail-row--amount {
+    flex: 0 0 100px;
+  }
+
+  /* Hide labels on desktop */
+  .transaction-detail-label {
+    display: none;
+  }
+
+  .transaction-detail-value {
+    text-align: left;
+  }
+
+  .transaction-detail-row--amount .transaction-detail-value {
+    text-align: right;
+  }
+
+  .transaction-actions {
+    flex: 0 0 80px;
+    justify-content: flex-end;
+    padding-top: 0;
+    border-top: none;
+  }
+}
+
+/* Utility Classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
