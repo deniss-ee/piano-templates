@@ -1,0 +1,279 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../myaccountbundle.css" rel="stylesheet" />
+    <link href="../my-account-layout.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <my-account-library ng-if="current=='library'" class="ng-scope">
+      <div id="library-shelf">
+        <!--Upgrade options-->
+        <!-- ngIf: isScreen(SCREEN_UPGRADE_OPTIONS) -->
+        <div class="screen--my-subscriptions" ng-show="isScreen(SCREEN_SUBSCRIPTIONS)" ng-init="active = true;">
+          <div class="library-container">
+            <!-- Header Section -->
+            <header class="library-header">
+              <div>
+                <!-- ngIf: termChangeFails.length > 0 -->
+              </div>
+              <span class="section-text">
+                <t><span class="ng-scope">Minu tellimused</span></t>
+              </span>
+            </header>
+            <div class="tabbable modal-style ng-isolate-scope" tabset="">
+              <ul class="vanilla-flat-tabs tabs" ng-transclude="">
+                <li ng-class="{active: active, disabled: disabled}" heading="Kehtiv" select="$parent.active=true" class="ng-isolate-scope active">
+                  <div class="tab ng-binding" ng-click="select()" tab-heading-transclude="">Kehtiv</div>
+                </li>
+                <li ng-class="{active: active, disabled: disabled}" heading="Aegunud" select="$parent.active=false" class="ng-isolate-scope">
+                  <div class="tab ng-binding" ng-click="select()" tab-heading-transclude="">Aegunud</div>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <!-- ngRepeat: tab in tabs -->
+                <div class="tab-pane ng-scope active" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+                  <div class="scrollable-content ng-scope">
+                    <!-- aktiivsed tellimused -->
+                    <!-- ngIf: $parent.active -->
+                    <div
+                      ng-if="$parent.active"
+                      collection="activeLibrary"
+                      postponed-upgrades="termChangeList"
+                      toggle-renew-callback="toggleAutoRenew"
+                      cancel-subscription-callback="cancelSubscription"
+                      deferred-cancel-subscription-callback="deferredCancelSubscription"
+                      resume-subscription-callback="resumeSubscription"
+                      refund-payment-callback="refundPayment"
+                      upgrade-library-item-callback="onUpgrade"
+                      update-payment-method-callback="updatePaymentMethod"
+                      get-user-address-callback="getUserAddress"
+                      renew-now-callback="renewNow"
+                      manage-shared-accounts-callback="manageSharedAccounts"
+                      leave-from-parent-subscription-callback="leaveFromParentSubscription"
+                      redeem-shared-access-callback="redeemSharedAccess"
+                      shared-access-list="sharedAccessList"
+                      class="ng-isolate-scope">
+                      <!-- ngIf: postponedUpgrades.length -->
+                      <!-- ngIf: sharedAccessList.length -->
+
+                      <!-- Column Headers - Desktop Only -->
+                      <div class="library-columns">
+                        <div class="library-columns-inner">
+                          <div class="column-header column-header--resource">
+                            <t context="checkout.platform"><span class="ng-scope">Tellimus</span></t>
+                          </div>
+                          <div class="column-header column-header--status">
+                            <t context="checkout.platform"><span class="ng-scope">Staatus</span></t>
+                          </div>
+                          <div class="column-header column-header--toggle">
+                            <t context="checkout.platform"><span class="ng-scope">Automaatne uuendamine</span></t>
+                          </div>
+                          <div class="column-header column-header--actions">
+                            <span class="sr-only">Actions</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Library Items List -->
+                      <div class="library-list">
+                        <!-- ngRepeat: libraryItem in collection | orderBy: 'resourceName' track by libraryItem.id -->
+                        <article class="library-card ng-scope" ng-repeat="libraryItem in collection | orderBy: 'resourceName' track by libraryItem.id ">
+                          <div class="library-card-inner">
+                            <!-- Details Section -->
+                            <div class="library-details">
+                              <!-- Resource -->
+                              <div class="library-detail-row library-detail-row--resource">
+                                <div class="library-detail-value">
+                                  <!-- ngIf: libraryItem.billingPlanModel.isSubscription -->
+                                  <div ng-if="libraryItem.billingPlanModel.isSubscription" class="resource-title ng-binding ng-scope">
+                                    Eesti Mets
+                                    <!-- ngIf: libraryItem.provider === 'Apple iTunes' -->
+                                  </div>
+                                  <!-- end ngIf: libraryItem.billingPlanModel.isSubscription -->
+
+                                  <div class="expiration-date expiration-warning">
+                                    <div class="clock"></div>
+                                    <span>
+                                      <span ng-bind-html="libraryItem.expirationMsg" class="ng-binding">Aegub 27.01.2024</span>
+                                      <span ng-bind-html="getPaymentMethodInfo(libraryItem.card)" class="ng-binding">with Arve for deniss.ivanjuk@gmail.com</span>
+                                      <span ng-show="!libraryItem.expired" class=""><strong class="ng-binding">2,99 €</strong></span>
+                                      <span ng-show="libraryItem.expired" class="ng-hide"><strong class="ng-binding">2,99 €</strong></span>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Auto-Renew Toggle (Desktop in column, Mobile shows differently) -->
+                              <div class="library-detail-row library-detail-row--toggle">
+                                <div class="library-detail-value">
+                                  <div class="library-toggle-wrapper mobile-hide" ng-show="libraryItem.autoRenewChangeEnabled">
+                                    <div tp-toggle="" class="library-toggle" ng-class="{'library-toggle--on': libraryItem.autoRenew}" ng-model="libraryItem.autoRenew" ng-change="toggleRenew(libraryItem)">
+                                      <div class="library-toggle-track">
+                                        <div class="library-toggle-thumb"></div>
+                                      </div>
+                                    </div>
+                                    <div class="library-toggle-label" ng-class="{'library-toggle-label--on':libraryItem.autoRenew}">
+                                      <t><span class="ng-scope">Aktiveeri püsimakse</span></t>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="library-actions">
+                              <div class="library-dropdown ng-isolate-scope" ng-class="{'mobile-show': canShowActionMenuMobile(libraryItem)}" ng-show="canShowActionMenu(libraryItem)">
+                                <button class="btn btn--outline btn--sm dropdown-toggle" data-toggle="dropdown" data-e2e="tp_menu_toggle" ng-disabled="isDisabled">
+                                  <t><span class="ng-scope">Halda</span></t>
+                                  <i class="icon-caret"></i>
+                                </button>
+                                <ul class="manage-dropdown dropdown-menu dropdown-menu-right" ng-transclude="" data-e2e="tp_menu_dropdown">
+                                  <!-- ngIf: libraryItem.autoRenewChangeEnabled -->
+                                  <li class="mobile-show manage-dropdown" ng-transclude="" ng-click="toggleRenew(libraryItem);" ng-if="libraryItem.autoRenewChangeEnabled">
+                                    <!-- ngIf: libraryItem.autoRenew === true -->
+                                    <!-- ngIf: libraryItem.autoRenew === false -->
+                                    <span ng-if="libraryItem.autoRenew === false" class="ng-scope">
+                                      <t><span class="ng-scope">Aktiveeri püsimakse</span></t>
+                                    </span>
+                                    <!-- end ngIf: libraryItem.autoRenew === false -->
+                                  </li>
+                                  <!-- end ngIf: libraryItem.autoRenewChangeEnabled -->
+
+                                  <!-- ngIf: libraryItem.renewNowEnabled -->
+                                  <li class="manage-dropdown" ng-transclude="" ng-click="renewNow(libraryItem)" ng-if="libraryItem.renewNowEnabled">
+                                    <t class="ng-scope"><span class="ng-scope">Pikenda kohe</span></t>
+                                  </li>
+                                  <!-- end ngIf: libraryItem.renewNowEnabled -->
+
+                                  <!-- ngIf: libraryItem.cancelEnabled -->
+                                  <!-- ngIf: libraryItem.cancelAndRefundEnabled -->
+                                  <!-- ngIf: libraryItem.deferredCancelEnabled -->
+                                  <!-- ngIf: libraryItem.resumeEnabled -->
+                                  <!-- ngIf: libraryItem.sharedAccountLimit -->
+
+                                  <!-- ngIf: libraryItem.updatePaymentMethodEnabled -->
+                                  <li class="manage-dropdown" ng-transclude="" ng-click="updatePaymentMethod(libraryItem)" ng-if="libraryItem.updatePaymentMethodEnabled">
+                                    <span class="ng-scope">
+                                      <t><span class="ng-scope">Värskendage makseviisi</span></t>
+                                    </span>
+                                  </li>
+                                  <!-- end ngIf: libraryItem.updatePaymentMethodEnabled -->
+
+                                  <!-- ngIf: libraryItem.sharedSubscription -->
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                        <!-- end ngRepeat: libraryItem in collection | orderBy: 'resourceName' track by libraryItem.id -->
+
+                        <article class="library-card ng-scope" ng-repeat="libraryItem in collection | orderBy: 'resourceName' track by libraryItem.id ">
+                          <div class="library-card-inner">
+                            <!-- Details Section -->
+                            <div class="library-details">
+                              <!-- Resource -->
+                              <div class="library-detail-row library-detail-row--resource">
+                                <div class="library-detail-value">
+                                  <!-- ngIf: libraryItem.billingPlanModel.isSubscription -->
+                                  <div ng-if="libraryItem.billingPlanModel.isSubscription" class="resource-title ng-binding ng-scope">
+                                    Õhtuleht&gt;
+                                    <!-- ngIf: libraryItem.provider === 'Apple iTunes' -->
+                                  </div>
+                                  <!-- end ngIf: libraryItem.billingPlanModel.isSubscription -->
+
+                                  <div class="expiration-date expiration-warning">
+                                    <div class="clock"></div>
+                                    <span>
+                                      <span ng-bind-html="libraryItem.expirationMsg" class="ng-binding">Aegub 15.12.2023</span>
+                                      <span ng-bind-html="getPaymentMethodInfo(libraryItem.card)" class="ng-binding">with Arve for deniss.ivanjuk@gmail.com</span>
+                                      <span ng-show="!libraryItem.expired" class=""><strong class="ng-binding">7,99 €</strong></span>
+                                      <span ng-show="libraryItem.expired" class="ng-hide"><strong class="ng-binding">1 €</strong></span>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Auto-Renew Toggle -->
+                              <div class="library-detail-row library-detail-row--toggle">
+                                <div class="library-detail-value">
+                                  <div class="library-toggle-wrapper mobile-hide" ng-show="libraryItem.autoRenewChangeEnabled">
+                                    <div tp-toggle="" class="library-toggle" ng-class="{'library-toggle--on': libraryItem.autoRenew}" ng-model="libraryItem.autoRenew" ng-change="toggleRenew(libraryItem)">
+                                      <div class="library-toggle-track">
+                                        <div class="library-toggle-thumb"></div>
+                                      </div>
+                                    </div>
+                                    <div class="library-toggle-label" ng-class="{'library-toggle-label--on':libraryItem.autoRenew}">
+                                      <t><span class="ng-scope">Aktiveeri püsimakse</span></t>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="library-actions">
+                              <button class="btn btn--yellow btn--sm ng-scope" ng-show="!libraryItem.expired" ng-if="libraryItem.sharedAccountLimit" ng-click="manageSharedAccounts(libraryItem)">
+                                <t><span class="ng-scope">Jaga sõpradega</span></t>
+                              </button>
+                              <div class="library-dropdown ng-isolate-scope" ng-class="{'mobile-show': canShowActionMenuMobile(libraryItem)}" ng-show="canShowActionMenu(libraryItem)">
+                                <button class="btn btn--outline btn--sm dropdown-toggle" data-toggle="dropdown" data-e2e="tp_menu_toggle" ng-disabled="isDisabled">
+                                  <t><span class="ng-scope">Halda</span></t>
+                                  <i class="icon-caret"></i>
+                                </button>
+                                <ul class="manage-dropdown dropdown-menu dropdown-menu-right" ng-transclude="" data-e2e="tp_menu_dropdown">
+                                  <!-- Menu items as shown in previous card -->
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                        <!-- end ngRepeat: libraryItem in collection | orderBy: 'resourceName' track by libraryItem.id -->
+                      </div>
+
+                      <!-- hidden button for 'jaga'-->
+                      <!-- ngRepeat: libraryItem in collection -->
+                      <ul class="tabs header-navigation-tabs ma-navigation ng-scope" ng-repeat="libraryItem in collection">
+                        <!-- ngIf: libraryItem.sharedAccountLimit -->
+                      </ul>
+                      <!-- end ngRepeat: libraryItem in collection -->
+                      <ul class="tabs header-navigation-tabs ma-navigation ng-scope" ng-repeat="libraryItem in collection">
+                        <!-- ngIf: libraryItem.sharedAccountLimit -->
+                        <li id="mach_sharer" style="visibility: hidden" ng-show="!libraryItem.expired" ng-if="libraryItem.sharedAccountLimit" ng-click="manageSharedAccounts(libraryItem)" class="ng-scope">
+                          <a class="" href="#">.</a>
+                        </li>
+                        <!-- end ngIf: libraryItem.sharedAccountLimit -->
+                      </ul>
+                      <!-- end ngRepeat: libraryItem in collection -->
+                    </div>
+                    <!-- end ngIf: $parent.active -->
+                  </div>
+                </div>
+                <!-- end ngRepeat: tab in tabs -->
+                <div class="tab-pane ng-scope" ng-repeat="tab in tabs" ng-class="{active: tab.active}" tab-content-transclude="tab">
+                  <div class="scrollable-content ng-scope">
+                    <!-- aegunud tellimused -->
+                    <!-- ngIf: !$parent.active -->
+                  </div>
+                </div>
+                <!-- end ngRepeat: tab in tabs -->
+              </div>
+            </div>
+          </div>
+          <div style="clear: both"></div>
+        </div>
+
+        <!-- ngIf: isScreen(SCREEN_PRINT_COMPONENT) -->
+      </div>
+    </my-account-library>
+  </body>
+</html>
