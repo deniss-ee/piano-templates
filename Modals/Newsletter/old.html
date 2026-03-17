@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="old.css">
+    </head>
+    <body>
+  <div class="pn-template">
+    <article class="pn-template__main pn-main">
+      <img class="pn-template__logo" 
+           src="[%% logo-href %%]" 
+           width="140"
+           height="27"
+           alt="Ohtuleht Logo">
+      <div class="pn-main__text-wrapper">
+        <h3 class="pn-main__title">
+          [%% template-title %%]
+        </h3>
+        <p class="pn-main__description">
+          [%% template-description %%]
+        </p>
+      </div>
+   <form class="pn-template__input-wrapper" id="template-form" ng-show="!$isSubmit">
+    <div class="pn-template__input-container pn-template__container">
+      <div class="pn-template__email-wrapper">
+        <input class="pn-template__email" newsletter-signup-input id="user-email" type="email" ng-model="userEmail" placeholder="Meiliaadress">
+        <label class="pn-template__error" for="user-email"></label>
+        <svg class="pn-template__error-icon" id="error-icon" width="16" height="16" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16ZM6.839 3.545H9.16l-.212 6.56H7.05l-.212-6.56Zm2.363 8.389c-.009.664-.567 1.2-1.2 1.2-.665 0-1.21-.536-1.2-1.2-.01-.656.535-1.187 1.2-1.187.633 0 1.191.531 1.2 1.187Z" fill="#EE0004"/>
+        </svg>
+      </div>
+      <button class="pn-template__submit pn-button"
+              id="fake-button"
+              type="button">
+        [%% cta-text %%]
+      </button>
+      <button class="pn-template__submit pn-button"
+              id="submit-button"
+              type="button"
+              ng-click="$isSubmit = true"
+              newsletter-signup-submit
+              external-event="newsletter-template-submit-button"
+              external-event-user-email="{{userEmail}}"
+              external-event-agree-newsletter="{{agreeNewsletter}}"
+              external-event-agree-commercial="{{agreeCommercial}}"
+              hidden>
+        [%% cta-text %%]
+      </button>
+    </div>
+    <p class="pn-template__small-text pn-template__small-text-copy">
+      Liitumisega annad Õhtuleht Kirjastus AS-ile nõusoleku töödelda oma e-posti aadressi uudiskirjade saatmiseks. Võid oma nõusoleku alati tagasi võtta uudiskirjas oleva lingi kaudu. Tutvu ka
+      <a class="pn-template__terms-link"
+         external-event="terms-and-condition-cta"
+         href="[%% terms-and-condition-href %%]">Õhtuleht Kirjastuse andmekaitsetingimustega
+      </a>
+    </p>
+  </form>
+      
+   <div class="pn-template__state pn-template__state--second" ng-show="$isSubmit">
+    <div class="pn-template__text-wrapper">
+      <strong class="pn-template__title">
+        [%% thanks-title %%]
+      </strong>
+      <p class="pn-template__text">
+        [%% thanks-text %%]
+      </p>
+    </div>
+  </div>
+ </article>
+</div>
+
+
+
+<script>
+  var emailForm = document.querySelector('.pn-template__email-wrapper');
+  var userEmailInput = document.querySelector('.pn-template__email');
+  var emailError = document.querySelector('.pn-template__error');
+  var userSubmit = document.querySelector('#submit-button');
+  var userFakeSubmit = document.querySelector('#fake-button');
+  var errorIcon = document.querySelector('#error-icon');
+
+  var checkEmail = function (inputData) {
+  var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return regex.test(inputData);
+  };
+
+
+
+  function handleUiState(){
+  emailForm.classList.remove('pn-template__email-wrapper--bad');
+  emailError.innerText = '';
+  errorIcon.style.display = 'none';
+  if (checkEmail(userEmailInput.value)) {
+  userFakeSubmit.hidden = true;
+  userSubmit.hidden = false;
+  } else {
+  userSubmit.hidden = true;
+  userFakeSubmit.hidden = false;
+  }
+  }
+
+
+  userEmailInput.addEventListener('input', handleUiState);
+
+
+  userFakeSubmit.addEventListener('click', function () {
+  const userEmail = userEmailInput.value;
+
+  if (!checkEmail(userEmail)) {
+  emailForm.classList.add('pn-template__email-wrapper--bad');
+  errorIcon.style.display = 'block';
+  userEmailInput.focus();
+
+  if (userEmail === '') {
+  emailError.innerText = 'Please enter an email address.';
+  } else {
+  emailError.innerText = 'Please enter a valid email address.';
+  }
+  } else {
+  emailForm.classList.remove('pn-template__email-wrapper--bad');
+  errorIcon.style.display = 'none';
+  emailError.innerText = '';
+  }
+  });
+
+</script>
+    </body>
+</html>

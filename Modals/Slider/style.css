@@ -1,0 +1,250 @@
+/* ============================================
+   PIANO SLIDER COMPONENT - DESIGN SYSTEM ALIGNED
+   Matches modal design language with consistent
+   spacing, typography, colors, and transitions
+   ============================================ */
+
+/* Hidden state - matches modal system */
+:where([hidden]),
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* ============================================
+   SLIDER OUTER CONTAINER
+   Provides modal-like framing and spacing
+   ============================================ */
+.pn-slider-container {
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: var(--spacing__4);
+}
+
+/* ============================================
+   SLIDER INNER CONTAINER
+   Uses modal border-radius and background
+   ============================================ */
+.pn-slider {
+  position: relative;
+  width: 100%;
+  max-width: 768px;
+  overflow: hidden;
+  background: var(--white);
+  border-radius: var(--radius__2xl);
+  margin-bottom: var(--spacing__4);
+}
+
+/* ============================================
+   SLIDES CONTAINER
+   Uses modal transition timing (125ms ease-in-out)
+   ============================================ */
+.slides {
+  -ms-flex-direction: row;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -o-transition: transform 125ms ease-in-out;
+  -webkit-transition: transform 125ms ease-in-out;
+  transition: transform 125ms ease-in-out;
+}
+
+/* ============================================
+   INDIVIDUAL SLIDE
+   Uses modal spacing scale (spacing__4, spacing__6)
+   ============================================ */
+.slide {
+  -ms-flex-align: center;
+  -ms-flex-direction: column;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  height: auto;
+  padding: var(--spacing__6) var(--spacing__4);
+  gap: var(--spacing__3);
+}
+
+/* ============================================
+   SLIDER TYPOGRAPHY
+   Inherits from modal system, adds slider-specific adjustments
+   ============================================ */
+.pn-slider__title {
+  /* Inherits from .pn-modal__title */
+  margin-bottom: 0 !important; /* Reset modal margin */
+  text-align: center;
+}
+
+.pn-slider__text {
+  /* Inherits from .pn-modal__text */
+  margin-bottom: 0 !important; /* Reset modal margin */
+  text-align: center;
+  padding: 0 var(--spacing__8);
+}
+
+/* ============================================
+   NAVIGATION BULLETS
+   Uses modal color system (red__700, with opacity)
+   ============================================ */
+.bullets {
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing__1);
+  position: absolute;
+  bottom: 0;
+
+  left: 50%;
+  -o-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.bullet {
+  width: var(--spacing__2);
+  height: var(--spacing__2);
+  border-radius: var(--radius__full);
+  background: rgba(227, 0, 15, 0.25);
+  cursor: pointer;
+  -o-transition: background-color 125ms ease-in-out;
+  -webkit-transition: background-color 125ms ease-in-out;
+  transition: background-color 125ms ease-in-out;
+}
+
+.bullet:hover {
+  background: rgba(227, 0, 15, 0.5);
+}
+
+.bullet.active {
+  background: var(--ol__red__700);
+}
+
+/* ============================================
+   NAVIGATION BUTTONS
+   Matches modal button styling and transitions
+   ============================================ */
+.slider-button {
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 100;
+  border: none;
+  background: none;
+  cursor: pointer;
+  height: var(--spacing__12);
+  width: var(--spacing__12);
+  -o-transition: background-color 125ms ease-in-out;
+  -webkit-transition: background-color 125ms ease-in-out;
+  transition: background-color 125ms ease-in-out;
+}
+
+.slider-button--prev {
+  left: var(--spacing__2);
+}
+
+.slider-button--next {
+  right: var(--spacing__2);
+}
+
+.slider-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* SVG icon color - uses modal red */
+.slider-button svg path {
+  fill: var(--ol__red__700);
+}
+
+.slider-button:hover svg path {
+  fill: var(--ol__red__800);
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   Matches modal responsive strategy
+   ============================================ */
+@media only screen and (max-width: 648px) {
+  .pn-slider__title {
+    font-size: var(--font__size__xl);
+  }
+
+  .slide {
+    padding: var(--spacing__8) var(--spacing__4);
+  }
+
+  .slider-button {
+    height: var(--spacing__10);
+    width: var(--spacing__10);
+  }
+
+  .slider-button svg {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .pn-slider-container {
+    padding: var(--spacing__3);
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .slide {
+    padding: var(--spacing__6) var(--spacing__3);
+  }
+
+  .slider-button {
+    height: var(--spacing__8);
+    width: var(--spacing__8);
+  }
+
+  .slider-button svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .bullets {
+    bottom: var(--spacing__2);
+  }
+  
+  .pn-slider-container {
+    padding: var(--spacing__2);
+  }
+}

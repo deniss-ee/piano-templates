@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Slider Component - Õhtuleht</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../Master/style.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+<section class="pn-template">
+<div class="pn-slider-container">
+  <div class="pn-slider">
+      <!-- Slides -->
+      <div class="slides">
+        <div class="slide" ng-if=[%% is-first-slide-show %%]>
+          <h3 class="pn-modal__title pn-slider__title">[%% slide-headline-1 %%]</h3>
+          <p class="pn-modal__text pn-slider__text">[%% slide-text-1 %%] [%% slide-text-1 %%] [%% slide-text-1 %%] [%% slide-text-1 %%] [%% slide-text-1 %%] [%% slide-text-1 %%]</p>
+          <a class="btn btn--red" href="[%% slide-url-1 %%]">[%% slide-button-copy-1 %%]</a>
+        </div>
+        <div class="slide">
+          <h3 class="pn-modal__title pn-slider__title">[%% slide-headline-2 %%]</h3>
+          <p class="pn-modal__text pn-slider__text">[%% slide-text-2 %%]</p>
+          <a class="btn btn--red" href="[%% slide-url-2 %%]">[%% slide-button-copy-2 %%]</a>
+        </div>
+        <div class="slide">
+          <h3 class="pn-modal__title pn-slider__title">[%% slide-headline-3 %%]</h3>
+          <p class="pn-modal__text pn-slider__text">[%% slide-text-3 %%]</p>
+          <a class="btn btn--red" href="[%% slide-url-3 %%]">[%% slide-button-copy-3 %%]</a>
+        </div>
+        <div class="slide">
+          <h3 class="pn-modal__title pn-slider__title">[%% slide-headline-4 %%]</h3>
+          <p class="pn-modal__text pn-slider__text">[%% slide-text-4 %%]</p>
+          <a class="btn btn--red" href="[%% slide-url-4 %%]">[%% slide-button-copy-4 %%]</a>
+        </div>
+        <div class="slide">
+          <h3 class="pn-modal__title pn-slider__title">[%% slide-headline-5 %%]</h3>
+          <p class="pn-modal__text pn-slider__text">[%% slide-text-5 %%]</p>
+          <a class="btn btn--red" href="[%% slide-url-5 %%]">[%% slide-button-copy-5 %%]</a>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button class="slider-button slider-button--prev" data-dir="prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <path d="M31.0971 7.38871L33.6387 9.95829L19.5416 24.0554L33.6387 38.1529L31.0971 40.722L14.4304 24.0554L31.0971 7.38871Z" fill="#E3000F"></path>
+        </svg>
+      </button>
+      <button class="slider-button slider-button--next" data-dir="next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <path d="M16.9029 40.6113L14.3613 38.0417L28.4584 23.9446L14.3613 9.84712L16.9029 7.27795L33.5696 23.9446L16.9029 40.6113Z" fill="#E3000F"></path>
+        </svg>
+      </button>
+      <!-- Bullets -->
+      <div class="bullets"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Updated JavaScript
+  const slides = document.querySelector(".slides");
+  const bulletsContainer = document.querySelector(".bullets");
+  const buttons = document.querySelectorAll(".slider-button");
+  const prevButton = document.querySelector(".slider-button--prev");
+  const nextButton = document.querySelector(".slider-button--next");
+  const slideElements = document.querySelectorAll(".slide");
+  let currentIndex = 0;
+
+  // Configuration Parameters
+  const hideButtonsOnEdges = true; // Set to true to hide buttons at edges
+  const autoplay = true; // Set to true to enable autoplay
+  const autoplayInterval = 300000; // Duration for each slide in milliseconds
+  let autoplayTimer = null;
+
+  // Generate bullets dynamically and place them inside the .bullets container
+  function generateBullets() {
+    slideElements.forEach((_, index) => {
+      const bullet = document.createElement("div");
+      bullet.className = "bullet";
+      if (index === 0) bullet.classList.add("active");
+      bullet.setAttribute("data-index", index);
+      bulletsContainer.appendChild(bullet);
+    });
+  }
+
+  // Update slider and handle button visibility
+  function updateSlider(index) {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    document.querySelectorAll(".bullet").forEach((bullet, i) => {
+      bullet.classList.toggle("active", i === index);
+    });
+
+    // Toggle visibility of prev and next buttons if functionality is enabled
+    if (hideButtonsOnEdges) {
+      prevButton.classList.toggle("hidden", index === 0);
+      nextButton.classList.toggle("hidden", index === slideElements.length - 1);
+    }
+  }
+
+  // Button navigation logic
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const dir = button.getAttribute("data-dir");
+      if (dir === "prev") {
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : slideElements.length - 1;
+      } else {
+        currentIndex = currentIndex < slideElements.length - 1 ? currentIndex + 1 : 0;
+      }
+      updateSlider(currentIndex);
+      resetAutoplay(); // Reset autoplay timer on manual navigation
+    });
+  });
+
+  // Bullet navigation logic
+  bulletsContainer.addEventListener("click", (event) => {
+    if (event.target.classList.contains("bullet")) {
+      currentIndex = Number(event.target.getAttribute("data-index"));
+      updateSlider(currentIndex);
+      resetAutoplay(); // Reset autoplay timer on manual navigation
+    }
+  });
+
+  // Autoplay logic
+  function startAutoplay() {
+    if (autoplay) {
+      autoplayTimer = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slideElements.length; // Loop back to first slide
+        updateSlider(currentIndex);
+      }, autoplayInterval);
+    }
+  }
+
+  function stopAutoplay() {
+    clearInterval(autoplayTimer);
+  }
+
+  function resetAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  // Initialize slider with proper button visibility and autoplay
+  generateBullets(); // Generate bullets dynamically
+  updateSlider(currentIndex);
+  startAutoplay();
+</script>
+    </body>
+</html>
