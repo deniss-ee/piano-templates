@@ -1,0 +1,31 @@
+<script type="text/ng-template" id="/widget/myaccount/partials/transactions/transactions.shtml">
+    <div class="ma-transactions">
+        <span class="section-text"><t>Transactions</t></span>
+        <div class="scrollable-content">
+            <div ng-show="transactions.length > 0" class="ma-tx-list">
+                <div class="ma-tx-card" ng-repeat="transaction in transactions | orderBy:'date':reverse">
+                    <div class="ma-tx-info">
+                        <span class="ma-tx-name">{{transaction.termName}}</span>
+                        <span class="ma-tx-date"><strong>Kuupäev:</strong> {{transaction.date | date: 'mediumDate'}}</span>
+                    </div>
+                    <div class="ma-tx-right">
+                        <div class="ma-tx-price">{{transaction.price}}</div>
+                        <div class="ma-tx-divider"></div>
+                        <div class="ma-tx-actions" ng-show="canResendReceipt">
+                            <a href="#" ng-click="resendReceipt(transaction)" class="ma-tx-action-btn" title="Saada">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 3L2 17H18L18 3H2ZM4 5.94V15H16V5.94L10 10.23L4 5.94ZM13.88 5H6.12L10 7.77L13.88 5Z" fill="currentColor"/>
+                                </svg>
+                            </a>
+                            <a href="#" ng-click="downloadTransactionInfo(transaction)" class="ma-tx-action-btn" title="Lae PDF">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9 2V11.59L6.71 9.29L5.29 10.71L10 15.41L14.71 10.71L13.29 9.29L11 11.59V2H9ZM3 18V14H5V16H15V14H17V18H3Z" fill="currentColor"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

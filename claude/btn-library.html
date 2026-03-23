@@ -1,0 +1,39 @@
+<div class="btn-group dropdown btn-filters btn-icons btn-control-actions ng-isolate-scope open" ng-class="{'mobile-show': canShowActionMenuMobile(libraryItem)}" ng-show="canShowActionMenu(libraryItem)">
+        <button class="btn dropdown-toggle" data-toggle="dropdown" data-e2e="tp_menu_toggle" ng-disabled="isDisabled">
+            <t><span class="ng-scope">Halda</span></t>
+            <i class="icon-caret"></i>
+        </button>
+        <ul class="manage-dropdown dropdown-menu dropdown-menu-right" ng-transclude="" data-e2e="tp_menu_dropdown">
+                    <!-- ngIf: libraryItem.autoRenewChangeEnabled --><li class="mobile-show manage-dropdown" ng-transclude="" ng-click="toggleRenew(libraryItem);" ng-if="libraryItem.autoRenewChangeEnabled">
+                        <!-- ngIf: libraryItem.autoRenew === true -->
+                        <!-- ngIf: libraryItem.autoRenew === false --><span ng-if="libraryItem.autoRenew === false" class="ng-scope">
+                            <t><span class="ng-scope">Aktiveeri püsimakse</span></t>
+                        </span><!-- end ngIf: libraryItem.autoRenew === false -->
+                    </li><!-- end ngIf: libraryItem.autoRenewChangeEnabled -->
+
+                    <!-- ngIf: libraryItem.renewNowEnabled --><li class="manage-dropdown" ng-transclude="" ng-click="renewNow(libraryItem)" ng-if="libraryItem.renewNowEnabled">
+                        <t class="ng-scope"><span class="ng-scope">Pikenda kohe</span></t>
+                    </li><!-- end ngIf: libraryItem.renewNowEnabled -->
+
+                    <!-- ngIf: libraryItem.cancelEnabled -->
+
+                    <!-- ngIf: libraryItem.cancelAndRefundEnabled -->
+
+                    <!-- ngIf: libraryItem.deferredCancelEnabled -->
+
+                    <!-- ngIf: libraryItem.resumeEnabled -->
+
+                    <!-- ngIf: libraryItem.sharedAccountLimit --><li class="manage-dropdown" ng-transclude="" ng-if="libraryItem.sharedAccountLimit" ng-click="manageSharedAccounts(libraryItem)">
+                        <t class="ng-scope"><span class="ng-scope">Jaga sõpradega</span></t>
+                    </li><!-- end ngIf: libraryItem.sharedAccountLimit -->
+
+                    <!-- ngIf: libraryItem.updatePaymentMethodEnabled --><li class="manage-dropdown" ng-transclude="" ng-click="updatePaymentMethod(libraryItem)" ng-if="libraryItem.updatePaymentMethodEnabled">
+                        <span class="ng-scope">
+                            <t><span class="ng-scope">Värskendage makseviisi</span></t>
+                        </span>
+                    </li><!-- end ngIf: libraryItem.updatePaymentMethodEnabled -->
+
+                    <!-- ngIf: libraryItem.sharedSubscription -->
+
+                </ul>
+    </div>

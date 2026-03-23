@@ -1,0 +1,47 @@
+<style>
+  my-account-pianoid-newsletters .scrollable-content {
+overflow-y: hidden !important;
+  padding-bottom: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+.newsletter-item {
+  padding: 1rem 1rem !important;
+  border: none;
+  background: #fff;
+  margin: 0rem 0rem;
+  width: calc(50% - .25rem) !important;
+  border-radius .5rem !important;
+}
+.newsletter-item span {
+  font-family: "Roboto", sans-serif !important;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #000;
+  }
+  checkbox-control.toggle.checked {
+    background: #e3000f !important;
+  }
+  .newsletter-item-divider {
+    display: none !important;
+  }
+  @media only screen and (max-width: 600px) {
+.newsletter-item {
+  width: 100% !important;
+}
+  }
+</style>
+
+<div class="content-padding-tb" style="padding-bottom: 1rem !important;">
+  <errors-list></errors-list>
+  <p style='font-family: "Fira Sans Condensed", sans-serif !important; font-size: 1.5rem; font-weight: 600; color: #e3000f;'>
+    <t>Uudiskirjad</t>
+</p>
+  <newsletters-list style="display: flex; flex-direction: row; flex-wrap: wrap; gap: .5rem;"></newsletters-list>
+  <div>
+    <div class="actions">
+      <button actionUnsubscribeFromAllNewsletters class="btn btn-green" style="display: none;"><t>Unsubscribe from all</t></button>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>

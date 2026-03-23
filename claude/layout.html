@@ -1,0 +1,68 @@
+<!-- Start main controller -->
+<div class="ma-main-controller my-account-container id" ng-class="{ 'mobile-user-agent': isMobileUserAgent() }">
+  <div class="ma-header">
+    <my-account-login is-user-valid="isUserValid" current="current"></my-account-login>
+    <language-selector></language-selector>
+  </div>
+  <my-account-tabs current="current" ng-show="isUserValid()"></my-account-tabs>
+  <div class="main" ng-show="isUserValid()">
+
+    <my-account-history ng-if="current=='payments'"></my-account-history>
+    <my-account-library ng-if="current=='library'"></my-account-library>
+    <my-account-transactions ng-if="current=='transactions'"></my-account-transactions>
+    <my-account-wallet ng-if="current=='wallet'"></my-account-wallet>
+    <my-account-vouchers           ng-if="current=='vouchers'"></my-account-vouchers>
+    <my-account-bills              ng-if="current=='bills'" class="bills"></my-account-bills>
+    <my-account-licensing          ng-if="current=='licensing'"></my-account-licensing>
+    <my-account-pianoid-newsletters ng-if="current=='pianoid-newsletters'"></my-account-pianoid-newsletters>
+    <my-account-pianoid            ng-if="current=='pianoid'"></my-account-pianoid>
+    <my-account-user-profile       ng-if="current=='userprofile'"></my-account-user-profile>
+    <my-account-help               ng-if="current=='help'"></my-account-help>
+    <my-account-library ng-if="current=='pianoid-share'"></my-account-library>
+    </div>
+    <div class="access-denied" ng-if="!isUserValid()">
+        <div><t context="checkout.platform">Konto andmete vaatamiseks logi sisse.</t></div>
+        <t context="checkout.platform">Kontoandmete laadimine ebaõnnestus.</t>
+    </div>
+</div>
+
+<script id="template/modal/window.html" type="text/ng-template">
+    <div class="myaccount-custom-modal tp-modal {{ windowClass }}" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10}">
+        <div class="myaccount-custom-modal-container">
+            <div class="modal-close" ng-click="close($event)"></div>
+            <div ng-transclude></div>
+        </div>
+    </div>
+</script>
+<script type="text/javascript">
+  function setupButtonTrigger() {
+    setTimeout(function() {
+       const hB = document.getElementById('mach_sharer');
+       if(hB){
+         hB.click();
+       }
+    }, 800); 
+   }
+</script>
+
+<script type="text/javascript">
+    var url = decodeURIComponent(decodeURIComponent(document.location.href));
+    var params = url.match(new RegExp('tab' + '=([^&=]+)'));
+    var accountTab = params ? params[1] : false;
+  
+    if (accountTab === "profiil") {
+      accountTab = "pianoid";
+    }
+  
+    if (accountTab === "tellimused") {
+        accountTab = "library";
+    }
+
+    setTimeout(function() {
+        if (accountTab) {
+            var scope = angular.element("#ng-app").scope();
+            scope.current = accountTab;
+            scope.$apply();
+        }
+    }, 100); 
+</script>

@@ -1,0 +1,14 @@
+<div class="btn-group dropdown btn-filters btn-icons btn-control-actions ng-scope open" ng-if="paymentMethodsAddingAvailable !== false">
+                <button class="btn dropdown-toggle" data-toggle="dropdown">
+                    <t><span class="ng-scope">Lisa makseviis</span></t><i class="icon-caret"></i>
+                </button>
+                <ul class="manage-dropdown dropdown-menu dropdown-menu-right">
+                    <!-- ngIf: canAddCreditCard || canAddNoCreditCardProvider -->
+                    <!-- ngIf: !canAddCreditCard --><li ng-if="!canAddCreditCard" class="manage-dropdown ng-scope" ng-click="addPayPal(source)"><t context="checkout.platform"><span class="ng-scope">Account</span></t></li><!-- end ngIf: !canAddCreditCard -->
+                    <!-- ngRepeat: source in paypalSources -->
+                    <!-- ngIf: canAddPostfinance -->
+                    <!-- ngRepeat: metadataItem in getPaymentInstrumentsMetadata() --><!-- ngIf: canAddPaymentInstrument(metadataItem) && metadataItem.id !== 75 && metadataItem.id !== 40 --><!-- end ngRepeat: metadataItem in getPaymentInstrumentsMetadata() --><!-- ngIf: canAddPaymentInstrument(metadataItem) && metadataItem.id !== 75 && metadataItem.id !== 40 --><li ng-repeat="metadataItem in getPaymentInstrumentsMetadata()" ng-if="canAddPaymentInstrument(metadataItem) &amp;&amp; metadataItem.id !== 75 &amp;&amp; metadataItem.id !== 40" class="manage-dropdown ng-scope" ng-click="addPaymentInstrument(metadataItem)" data-e2e="add-zlick">
+                        <t context="checkout.platform" class="ng-binding"><span class="ng-binding ng-scope">Zlick mobiilimakse</span></t>
+                    </li><!-- end ngIf: canAddPaymentInstrument(metadataItem) && metadataItem.id !== 75 && metadataItem.id !== 40 --><!-- end ngRepeat: metadataItem in getPaymentInstrumentsMetadata() -->
+                </ul>
+            </div>

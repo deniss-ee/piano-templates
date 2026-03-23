@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /* ============================================
+   Piano ID Profile — Custom Styles
+   Replaces the inline <style> block in profile.html
+   Uses design tokens from style.css
+   ============================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;600;700&family=Inter:opsz,wght@14..32,100..900&display=swap");
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --borderwidth__1: 1px;
+    --font__family__fira: "Fira Sans Condensed", sans-serif;
+    --font__family__inter: "Inter", sans-serif;
+    --font__size__2xl: 24px;
+    --font__size__base: 16px;
+    --font__size__sm: 14px;
+    --font__size__xs: 12px;
+    --font__weight__bold: 700;
+    --font__weight__extrabold: 800;
+    --font__weight__semibold: 600;
+    --font__weight__medium: 500;
+    --font__weight__normal: 400;
+    --ol__monochrome__50: #f5f6f6;
+    --ol__monochrome__100: #e5e8e8;
+    --ol__monochrome__200: #cdd3d4;
+    --ol__monochrome__300: #aab3b6;
+    --ol__monochrome__400: #808d90;
+    --ol__monochrome__500: #657275;
+    --ol__monochrome__700: #4a5254;
+    --ol__monochrome__950: #17191a;
+    --ol__red__50: #fff0f1;
+    --ol__red__100: #ffdddf;
+    --ol__red__700: #e3000f;
+    --ol__red__800: #af0510;
+    --ol__cream__50: #fff8eb;
+    --radius__sm: 4px;
+    --radius__md: 6px;
+    --radius__lg: 8px;
+    --radius__xl: 12px;
+    --spacing__1: 4px;
+    --spacing__2: 8px;
+    --spacing__3: 12px;
+    --spacing__4: 16px;
+    --spacing__5: 20px;
+    --spacing__6: 24px;
+}
+
+
+/* --- Resets --- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+div, section, ul, li, h1, h2, h3, h4, table, td, tr, form, label, iframe {
+    margin: 0; padding: 0; border: 0;
+}
+
+ul { list-style: none; }
+svg { overflow: visible; }
+
+button, input, select, textarea { margin: 0; font-size: 100%; vertical-align: middle; }
+button, input { line-height: normal; }
+button::-moz-focus-inner, input::-moz-focus-inner { padding: 0; border: 0; }
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor: pointer; -webkit-appearance: button;
+}
+
+label { display: block; }
+div[hidden] { display: none; }
+
+
+/* --- Base --- */
+
+html, body { font-size: 15px; }
+
+body {
+    margin: 0;
+    background: var(--ol__monochrome__50);
+    color: var(--ol__monochrome__950);
+    font-family: var(--font__family__inter);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* { font-family: var(--font__family__inter) !important; }
+
+t { unicode-bidi: plaintext; }
+
+
+/* --- Main container --- */
+
+.content-padding-tb {
+    clear: both;
+    padding: 0rem !important;
+}
+
+
+/* --- Success message --- */
+
+.complete-msg {
+    padding: var(--spacing__3) var(--spacing__4);
+    margin-bottom: var(--spacing__4);
+    background: #dff0d8;
+    border-radius: var(--radius__lg);
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__xs);
+    font-weight: var(--font__weight__medium);
+    color: #3c763d;
+    line-height: 1.5;
+}
+
+
+/* --- Card wrapper --- */
+
+.ma-profile__card {
+    background: var(--white);
+    border-radius: var(--radius__lg);
+    padding: var(--spacing__4);
+    margin-bottom: var(--spacing__2);
+}
+
+
+/* --- Form layout inside cards --- */
+
+.tp-form {
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.tp-form + .tp-form {
+    margin-top: var(--spacing__3);
+}
+
+.tp-form .control-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 0;
+}
+
+.tp-form .control-label {
+    width: auto;
+    flex-shrink: 0;
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__sm);
+    font-weight: var(--font__weight__medium);
+    color: var(--ol__monochrome__950);
+    line-height: 1.35;
+    margin-bottom: var(--spacing__1);
+}
+
+.tp-form .control-label-icon {
+    cursor: pointer;
+    width: 20px;
+    margin-left: var(--spacing__1);
+    margin-right: calc(var(--spacing__4) * -1);
+    flex-shrink: 0;
+}
+
+.tp-form .controls {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    padding-left: 0;
+}
+
+.tp-form .control-group::after { clear: both; }
+
+.tp-form .control-group::before,
+.tp-form .control-group::after,
+.tp-form .controls::before,
+.tp-form .controls::after {
+    content: "";
+    display: table;
+}
+
+
+/* --- Inputs --- */
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+    display: inline-block;
+    width: 100%;
+    height: 40px !important;
+    padding: 0 var(--spacing__3) !important;
+    border: var(--borderwidth__1) solid var(--ol__monochrome__200) !important;
+    border-radius: var(--radius__md);
+    outline: none;
+    color: var(--ol__monochrome__950);
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__sm);
+    font-weight: var(--font__weight__normal);
+    line-height: 1.35;
+    background: var(--white);
+    box-shadow: none !important;
+    transition: border-color 125ms ease-in-out;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--ol__red__700) !important;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+input:disabled, input[readonly] {
+    background: var(--ol__monochrome__50) !important;
+    color: var(--ol__monochrome__400);
+    cursor: not-allowed;
+}
+
+::-webkit-input-placeholder { color: var(--ol__monochrome__400); }
+::-moz-placeholder { color: var(--ol__monochrome__400); }
+:-ms-input-placeholder { color: var(--ol__monochrome__400); }
+
+
+/* --- Error messages --- */
+
+.error-message {
+    display: none;
+    margin-top: var(--spacing__1);
+    color: var(--ol__red__700);
+    font-family: var(--font__family__inter);
+    font-size: 11px;
+    font-weight: var(--font__weight__medium);
+    line-height: 1.5;
+    text-align: left;
+}
+
+.error-list { margin-bottom: var(--spacing__3); }
+
+.validation-error {
+    color: var(--ol__red__700);
+    font-size: 11px;
+    line-height: 2em;
+    text-align: left;
+}
+
+.custom-field-has-errors .input,
+.custom-field-has-errors input {
+    border-color: var(--ol__red__700) !important;
+}
+
+
+/* --- Help / Links --- */
+
+.help { text-align: left; }
+.help > div { display: inline-block; }
+
+span.title {
+    color: var(--ol__monochrome__500);
+    padding: var(--spacing__2) 0 0 0;
+    display: block;
+    font-size: var(--font__size__xs);
+}
+
+a, a:visited {
+    color: var(--ol__red__700);
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 125ms ease-in-out;
+}
+
+a:hover {
+    color: var(--ol__red__800);
+    text-decoration: underline;
+}
+
+
+/* --- Buttons --- */
+
+.btn {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 var(--spacing__5);
+    height: 40px;
+    line-height: 40px;
+    border-radius: var(--radius__md);
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    border: none;
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__sm);
+    font-weight: var(--font__weight__bold);
+    white-space: nowrap;
+    outline: 0;
+    transition: background-color 125ms ease-in-out;
+}
+
+.btn * {
+    font-family: var(--font__family__inter) !important;
+    text-transform: none;
+}
+
+.btn-green, .btn.btn-green {
+    color: var(--white) !important;
+    background: var(--ol__red__700) !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+.btn-green:hover, .btn-green:focus {
+    background: var(--ol__red__800) !important;
+    color: var(--white) !important;
+}
+
+.btn-link, .btn-link:active {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    color: var(--ol__red__700) !important;
+    padding: 0;
+    height: auto;
+    line-height: 1.5;
+    font-size: var(--font__size__xs);
+    font-weight: var(--font__weight__semibold);
+}
+
+.btn-link:hover, .btn-link:focus {
+    color: var(--ol__red__800) !important;
+    text-decoration: underline;
+    background: transparent !important;
+}
+
+.btn[disabled], .btn.disabled {
+    cursor: default;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.actions {
+    margin-top: var(--spacing__5);
+}
+
+
+/* --- Social accounts --- */
+
+.social-accounts-title {
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__sm) !important;
+    font-weight: var(--font__weight__bold);
+    color: var(--ol__monochrome__950);
+}
+
+.social-group {
+    display: flex;
+    align-items: center;
+    min-height: auto;
+    padding: var(--spacing__3) 0;
+    text-align: right;
+}
+
+.social-group:last-child {
+    padding-bottom: 0;
+}
+
+.social-caption {
+    float: none;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__sm);
+    font-weight: var(--font__weight__medium);
+    color: var(--ol__monochrome__950);
+    height: auto;
+    line-height: 1.35;
+}
+
+.social-icon {
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-right: var(--spacing__2);
+    margin-top: 0;
+}
+
+.social-linked {
+    display: inline-flex;
+    align-items: center;
+    height: auto;
+    line-height: 1.35;
+    padding-right: var(--spacing__3);
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__xs);
+    font-weight: var(--font__weight__normal);
+    color: #43c08b;
+}
+
+.social-linked::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: var(--spacing__1);
+    margin-top: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M6.5 10.8L4.2 8.5L3.5 9.2L6.5 12.2L13.5 5.2L12.8 4.5L6.5 10.8Z' fill='%2343c08b'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.social-buttons {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing__2);
+}
+
+.btn.social {
+    min-width: auto;
+    height: 28px !important;
+    line-height: 28px !important;
+    padding: 0 var(--spacing__3) !important;
+    border-radius: var(--radius__sm) !important;
+    font-size: 11px !important;
+    font-weight: var(--font__weight__semibold) !important;
+}
+
+.btn.social.link {
+    color: var(--white) !important;
+    background: var(--ol__red__700) !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+.btn.social.link:hover { background: var(--ol__red__800) !important; }
+
+.btn.social.unlink {
+    color: var(--ol__monochrome__500) !important;
+    background: var(--ol__monochrome__100) !important;
+    border: none !important;
+}
+
+.btn.social.unlink:hover {
+    background: var(--ol__monochrome__200) !important;
+    color: var(--ol__monochrome__700) !important;
+}
+
+
+/* --- Custom fields (Piano) --- */
+
+.input {
+    display: block;
+    width: 100%;
+    background: var(--white);
+    font-size: var(--font__size__sm);
+    padding: var(--spacing__1) var(--spacing__2);
+    box-sizing: border-box;
+    border: var(--borderwidth__1) solid var(--ol__monochrome__200);
+    border-radius: var(--radius__md);
+    color: var(--ol__monochrome__950);
+    text-align: left;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+.input:empty::before { content: "\00a0"; }
+
+.input.with-placeholder {
+    color: var(--ol__monochrome__400);
+    font-size: var(--font__size__sm);
+}
+
+.pn-icon {
+    width: 12px; height: 12px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.3;
+}
+
+button.pn-icon {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.pn-icon-tooltip {
+    height: 20px; width: 20px;
+    opacity: 0.4;
+    display: inline-block;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 10C4 6.68629 6.68629 4 10 4C13.3137 4 16 6.68629 16 10C16 13.3137 13.3137 16 10 16C6.68629 16 4 13.3137 4 10ZM3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10ZM9 9L9 14L11 14L11 9L9 9ZM9 6L9 8L11 8L11 6L9 6Z' fill='%230A0E12'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.pn-icon-tooltip:hover { opacity: 0.6; }
+
+/* --- Responsive --- */
+
+@media (max-width: 600px) {
+    .tp-form .control-group {
+        flex-wrap: wrap;
+    }
+
+    .tp-form .control-label {
+        width: auto;
+    }
+
+    .tp-form .controls {
+        margin-top: 5px;
+        padding-left: 0;
+    }
+
+    .tp-form .control-label-icon {
+        margin-right: 0;
+    }
+}
+
+
+/* --- RTL --- */
+
+body[dir="rtl"] .tp-form .controls { padding-left: 0; padding-right: 0; }
+body[dir="rtl"] .social-linked { padding-right: 0; padding-left: var(--spacing__3); }
+body[dir="rtl"] .social-linked::before { margin-left: var(--spacing__1); margin-right: 0; }
+body[dir="rtl"] .social-icon { margin-right: 0; margin-left: var(--spacing__2); }
+body[dir="rtl"] .help { text-align: right; }
+body[dir="rtl"] .error-list { text-align: right; }
+body[dir="rtl"] .error-message, body[dir="rtl"] .validation-error { text-align: right; }
+    </style>
+  </head>
+  <body>
+<div class="content-padding-tb ma-profile">
+  <errors-list></errors-list>
+  <div flashProfileUpdated class="complete-msg">
+    <t>Profiil on uuendatud</t>
+  </div>
+
+  <!-- Card 1: Personal info -->
+  <div class="ma-profile__card">
+    <div class="tp-form form-horizontal">
+      <div class="control-group">
+        <label for="first_name" class="control-label"><t>Eesnimi</t></label>
+        <div class="controls">
+          <input type="text" fieldProfileFirstName id="first_name" placeholder="{{ 'Eesnimi' | t }}">
+          <span showIfFirstNameInvalid class="error-message"><t>Eesnimi on vajalik</t></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tp-form form-horizontal">
+      <div class="control-group">
+        <label for="last_name" class="control-label"><t>Perekonnanimi</t></label>
+        <div class="controls">
+          <input type="text" fieldProfileLastName id="last_name" placeholder="{{ 'Perekonnanimi' | t }}">
+          <span showIfForLastNameInvalid class="error-message"><t>Perekonnanimi on vajalik</t></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tp-form form-horizontal">
+      <div class="control-group">
+        <label for="email" class="control-label"><t>E-posti aadress</t></label>
+        <div class="controls">
+          <input type="text" fieldProfileEmail id="email" placeholder="{{ 'E-posti aadress' | t }}">
+          <span showIfEmailInvalid class="error-message"><t>E-posti aadress on vajalik</t></span>
+          <div class="help" *showIfResendConfirmationEmailNeeded>
+            <span class="title" data-e2e="resendTitle"><t>E-posti aadress ei ole kinnitatud.</t></span>
+            <div>
+              <a class="btn btn-link" data-e2e="resendLink" actionResendConfirmationEmail><t>Saada kinnituskiri uuesti</t></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2: Password (view mode) -->
+  <div class="ma-profile__card" *hideChangePassword>
+    <div class="tp-form form-horizontal">
+      <div class="control-group">
+        <label for="password" class="control-label" *hideIfPasswordless><t>Parool</t></label>
+        <div class="controls">
+          <input type="password" id="password" placeholder="{{ 'Password' | t }}" value="********" readonly disabled *hideIfPasswordless>
+          <div class="help">
+            <div>
+              <a class="btn btn-link" *onChangePassword data-e2e="onChangePassword">
+                <t *hideIfPasswordless>Muuda parooli</t>
+                <t *showIfPasswordless>Parooli lisamiseks kliki siia</t>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 alt: Password (change mode) -->
+  <div class="ma-profile__card" *showChangePasswordPasswordless>
+    <div class="tp-form form-horizontal">
+      <div class="control-group">
+        <label for="current_password" class="control-label"><t>Praegune parool</t></label>
+        <div class="controls">
+          <input type="password" fieldProfileCurrentPassword="" id="current_password" placeholder="{{ 'Praegune parool' | t }}">
+          <span showIfPasswordInvalid class="error-message"><t>Parool on nõutav</t></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ma-profile__card" *showChangePassword>
+    <div class="tp-form form-horizontal">
+      <div class="control-group">
+        <label for="new_password" class="control-label"><t>Uus parool</t></label>
+        <div class="controls">
+          <input type="password" fieldProfileNewPassword id="new_password" placeholder="{{ 'Uus parool' | t }}">
+          <span showIfNewPasswordInvalidBy="PASSWORD_REQUIRED" class="error-message"><t>Parool on nõutav.</t></span>
+          <span showIfNewPasswordInvalidBy="PASSWORD_MIXED_CASE" class="error-message"><t>Parool peab sisaldama väikseid ja suuri tähti.</t></span>
+          <span showIfNewPasswordInvalidBy="PASSWORD_ALPHANUMERIC" class="error-message"><t>Parool peab sisaldama nii tähti kui ka numbreid.</t></span>
+          <span showIfNewPasswordInvalidBy="PASSWORD_SPECIAL_CHARACTERS" class="error-message"><t>Parool peab sisaldama mis tahes sümboleid.</t></span>
+          <span showIfNewPasswordInvalidBy="PASSWORD_CANT_CONTAIN_EMAIL" class="error-message"><t>Parool ei tohi sisaldada kasutaja e-posti aadressi.</t></span>
+          <span showIfNewPasswordInvalidBy="PASSWORD_MIN_LENGTH" class="error-message"><t>Parooli minimaalne nõutav tähemärkide arv.</t></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tp-form form-horizontal">
+      <div class="control-group">
+        <label for="repeat_password" class="control-label"><t>Kinnita uus parool</t></label>
+        <div class="controls">
+          <input type="password" fieldProfileRepeatNewPassword id="repeat_password" placeholder="{{ 'Kinnita uus parool' | t }}">
+          <span showIfConfirmPasswordInvalid class="error-message"><t>Parool ja parooli kinnitus ei kattu</t></span>
+          <div class="help">
+            <div>
+              <a class="btn btn-link" *offChangePassword><t>Määra parool hiljem</t></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3: Custom fields (if any) -->
+  <custom-fields class="tp-form form-horizontal ma-profile__card">
+    <ng-template let-field>
+      <div class="control-group">
+        <label class="control-label"
+               mouseOverTooltip
+               customFieldLabel
+               [fieldName]="field.field_name"
+        ></label>
+        <div class="control-label-icon" showForTooltipType="InfoIcon" [fieldName]="field.field_name">
+          <i class="pn-icon pn-icon-tooltip" infoIconTooltip [fieldName]="field.field_name"></i>
+        </div>
+        <div class="controls">
+          <custom-field-input [fieldName]="field.field_name"></custom-field-input>
+        </div>
+      </div>
+    </ng-template>
+  </custom-fields>
+
+  <!-- Card 4: Social accounts -->
+  <div class="ma-profile__card" showIfSocialAuthAvailable>
+    <div class="tp-form form-horizontal">
+      <div class="control-group">
+        <h2 class="control-label social-accounts-title"><t>Sotsiaalmeedia</t></h2>
+        <div class="controls">
+          <div showIfAppleAvailable class="social-group clearfix">
+            <div class="social-caption">
+              <i class="social-icon apple"></i>
+              Apple
+            </div>
+            <span showIfAppleLinked class="social-linked"><t>Konto on ühendatud</t></span>
+            <div class="social-buttons">
+              <apple-unlink><t>Ühenda lahti</t></apple-unlink>
+              <apple-link><t>Ühenda konto</t></apple-link>
+            </div>
+          </div>
+          <div showIfFacebookAvailable class="social-group clearfix">
+            <div class="social-caption">
+              <i class="social-icon facebook"></i>
+              Facebook
+            </div>
+            <span showIfFacebookLinked class="social-linked"><t>Konto on ühendatud</t></span>
+            <div class="social-buttons">
+              <facebook-unlink><t>Ühenda lahti</t></facebook-unlink>
+              <facebook-link><t>Ühenda konto</t></facebook-link>
+            </div>
+          </div>
+          <div showIfGoogleAvailable class="social-group clearfix">
+            <div class="social-caption">
+              <i class="social-icon google"></i>
+              Google
+            </div>
+            <span showIfGoogleLinked class="social-linked"><t>Konto on ühendatud</t></span>
+            <div class="social-buttons">
+              <google-unlink><t>Ühenda lahti</t></google-unlink>
+              <google-link><t>Ühenda konto</t></google-link>
+            </div>
+          </div>
+          <div showIfTwitterAvailable class="social-group clearfix">
+            <div class="social-caption">
+              <i class="social-icon twitter"></i>
+              Twitter
+            </div>
+            <span showIfTwitterLinked class="social-linked"><t>Konto on ühendatud</t></span>
+            <div class="social-buttons">
+              <twitter-unlink><t>Ühenda lahti</t></twitter-unlink>
+              <twitter-link><t>Ühenda konto</t></twitter-link>
+            </div>
+          </div>
+          <div showIfLinkedinAvailable class="social-group clearfix">
+            <div class="social-caption">
+              <i class="social-icon linkedin"></i>
+              LinkedIn
+            </div>
+            <span showIfLinkedinLinked class="social-linked"><t>Konto on ühendatud</t></span>
+            <div class="social-buttons">
+              <linkedin-unlink><t>Ühenda lahti</t></linkedin-unlink>
+              <linkedin-link><t>Ühenda konto</t></linkedin-link>
+            </div>
+          </div>
+          <open-id-list showIfOpenIdAvailable>
+            <ng-template>
+              <div class="social-group clearfix">
+                <div class="social-caption">
+                  <i class="social-icon openid" openIdIcon></i>
+                  <span openIdTitle></span>
+                </div>
+                <span showIfOpenIdLinked class="social-linked"><t>Konto on ühendatud</t></span>
+                <div class="social-buttons">
+                  <openid-unlink><t>Ühenda lahti</t></openid-unlink>
+                  <openid-link><t>Ühenda konto</t></openid-link>
+                </div>
+              </div>
+            </ng-template>
+          </open-id-list>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="actions">
+      <button actionUpdateProfile class="btn btn-green"><t>Salvesta</t></button>
+    </div>
+  </div>
+
+</div>
+  </body>
+</html>
