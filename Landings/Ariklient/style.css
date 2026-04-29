@@ -1,0 +1,593 @@
+/* ============================================
+   ÕHTULEHT BUSINESS CLIENT LANDING PAGE
+   Built with Piano Design System
+   Last Updated: 7 April 2026
+   ============================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+/* ============================================
+   DESIGN TOKENS - Piano Design System
+   ============================================ */
+:root {
+  /* Colors - Õhtuleht Brand Palette */
+  --black: #000000;
+  --white: #ffffff;
+  
+  /* Red Scale */
+  --ol__red__50: #FFF5F5;
+  --ol__red__100: #FFEBEC;
+  --ol__red__200: #FFD6D9;
+  --ol__red__300: #FFB8BC;
+  --ol__red__400: #FF8F96;
+  --ol__red__500: #FF616B;
+  --ol__red__600: #F20312;
+  --ol__red__700: #C7000D;
+  --ol__red__800: #AF0510;
+  --ol__red__900: #840B13;
+  --ol__red__950: #520005;
+  
+  /* Yellow Scale */
+  --ol__yellow__50: #FFF9D6;
+  --ol__yellow__100: #FFF09E;
+  --ol__yellow__200: #FFDF33;
+  --ol__yellow__300: #F5C500;
+  --ol__yellow__400: #DBA700;
+  --ol__yellow__500: #CF8A02;
+  --ol__yellow__600: #BD6C00;
+  --ol__yellow__700: #A54F04;
+  --ol__yellow__800: #863D09;
+  --ol__yellow__900: #70330B;
+  --ol__yellow__950: #461C01;
+  
+  /* Monochrome Scale */
+  --ol__monochrome__50: #F7F7F7;
+  --ol__monochrome__100: #EFEFF0;
+  --ol__monochrome__200: #DFDFE2;
+  --ol__monochrome__300: #CACACE;
+  --ol__monochrome__400: #B1B1B9;
+  --ol__monochrome__500: #98989F;
+  --ol__monochrome__600: #7E7E8B;
+  --ol__monochrome__700: #686873;
+  --ol__monochrome__800: #53535A;
+  --ol__monochrome__900: #46464E;
+  --ol__monochrome__950: #292932;
+  
+  /* Typography */
+  --font__family__fira: "Fira Sans Condensed", sans-serif;
+  --font__family__inter: "Inter", sans-serif;
+  
+  /* Font Sizes */
+  --font__size__xs: 12px;
+  --font__size__sm: 14px;
+  --font__size__base: 16px;
+  --font__size__lg: 18px;
+  --font__size__xl: 20px;
+  --font__size__2xl: 24px;
+  --font__size__3xl: 30px;
+  --font__size__4xl: 36px;
+  --font__size__5xl: 48px;
+  --font__size__6xl: 60px;
+  
+  /* Font Weights */
+  --font__weight__normal: 400;
+  --font__weight__medium: 500;
+  --font__weight__semibold: 600;
+  --font__weight__bold: 700;
+  --font__weight__extrabold: 800;
+  
+  /* Spacing (4px base unit) */
+  --spacing__0: 0px;
+  --spacing__1: 4px;
+  --spacing__2: 8px;
+  --spacing__3: 12px;
+  --spacing__4: 16px;
+  --spacing__5: 20px;
+  --spacing__6: 24px;
+  --spacing__7: 28px;
+  --spacing__8: 32px;
+  --spacing__10: 40px;
+  --spacing__12: 48px;
+  --spacing__14: 56px;
+  --spacing__16: 64px;
+  --spacing__20: 80px;
+  --spacing__24: 96px;
+  
+  /* Border Radius */
+  --radius__sm: 4px;
+  --radius__md: 6px;
+  --radius__lg: 8px;
+  --radius__xl: 12px;
+  --radius__2xl: 16px;
+  --radius__3xl: 24px;
+  --radius__full: 9999px;
+}
+
+/* ============================================
+   GLOBAL RESET & BASE STYLES
+   ============================================ */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__base);
+  font-weight: var(--font__weight__normal);
+  line-height: 1.5;
+  color: var(--ol__monochrome__950);
+  background: var(--white);
+}
+
+:where([hidden]),
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* ============================================
+   LANDING PAGE STRUCTURE
+   ============================================ */
+
+/* Container - Max Width & Centering */
+.pn-landing-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing__4);
+}
+
+@media (min-width: 768px) {
+  .pn-landing-container {
+    padding: 0 var(--spacing__6);
+  }
+}
+
+/* Section Spacing */
+.pn-landing-section {
+  padding: var(--spacing__16) 0;
+}
+
+@media (min-width: 768px) {
+  .pn-landing-section {
+    padding: var(--spacing__12) 0;
+  }
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.pn-landing-hero {
+  padding: var(--spacing__12) 0;
+  background: var(--white);
+}
+
+@media (min-width: 768px) {
+  .pn-landing-hero {
+    padding: 0;
+  }
+}
+
+/* Hero Container with Background */
+.pn-landing-hero .pn-landing-container {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .pn-landing-hero .pn-landing-container {
+    margin-top: var(--spacing__6);
+    border-radius: var(--radius__2xl);
+    min-height: 500px;
+    background-image: url('https://i.postimg.cc/fyF1VsT7/office-desk-table-with-red-cup-of-coffee-and-noteb-2026-03-25-09-32-02-utc.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Hero Layout */
+.pn-landing-hero__layout {
+  width: 100%;
+}
+
+/* Hero Content */
+.pn-landing-hero__content {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .pn-landing-hero__content {
+    max-width: 50%;
+    text-align: left;
+  }
+}
+
+.pn-landing-hero__title {
+  margin: 0 0 var(--spacing__3) 0;
+  font-family: var(--font__family__fira);
+  font-size: var(--font__size__2xl);
+  font-weight: var(--font__weight__bold);
+  line-height: 1.2;
+  color: var(--ol__red__600);
+}
+
+@media (min-width: 768px) {
+  .pn-landing-hero__title {
+    font-size: var(--font__size__4xl);
+  }
+}
+
+.pn-landing-hero__subtitle {
+  margin: 0 0 var(--spacing__6) 0;
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__base);
+  font-weight: var(--font__weight__medium);
+  line-height: 1.5;
+  color: var(--ol__monochrome__900);
+}
+
+@media (min-width: 768px) {
+  .pn-landing-hero__subtitle {
+    font-size: var(--font__size__lg);
+  }
+}
+
+.pn-landing-hero__cta {
+  display: inline-flex;
+  max-width: 300px;
+}
+
+/* ============================================
+   SECTION TITLES
+   ============================================ */
+.pn-landing-section__title {
+  margin: 0 0 var(--spacing__8) 0;
+  font-family: var(--font__family__fira);
+  font-size: var(--font__size__xl);
+  font-weight: var(--font__weight__bold);
+  line-height: 1.3;
+  color: var(--ol__monochrome__900);
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .pn-landing-section__title {
+    font-size: var(--font__size__3xl);
+  }
+}
+
+.pn-landing-section__title--center {
+  text-align: center;
+}
+
+/* Center specific heading text */
+.pn-landing-section--benefits .pn-landing-section__title {
+  text-align: center;
+}
+
+.pn-landing-section__title strong {
+  font-family: inherit;
+  font-weight: inherit;
+  color: var(--ol__red__600);
+}
+
+/* ============================================
+   BENEFITS GRID
+   ============================================ */
+.pn-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing__4);
+}
+
+@media (min-width: 768px) {
+  .pn-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing__6);
+  }
+}
+
+/* Benefit Card */
+.pn-benefit-card {
+  position: relative;
+  padding: var(--spacing__6);
+  border-radius: var(--radius__2xl);
+  background: var(--ol__red__50);
+  overflow: hidden;
+}
+
+.pn-benefit-card__number {
+  position: absolute;
+  right: var(--spacing__4);
+  bottom: 0;
+  font-family: var(--font__family__fira);
+  font-size: var(--font__size__6xl);
+  font-weight: var(--font__weight__bold);
+  line-height: 1;
+  color: var(--ol__red__200);
+  pointer-events: none;
+}
+
+.pn-benefit-card__title {
+  margin: 0 0 var(--spacing__2) 0;
+  font-family: var(--font__family__fira);
+  font-size: var(--font__size__lg);
+  font-weight: var(--font__weight__bold);
+  line-height: 1.3;
+  color: var(--ol__red__600);
+}
+
+.pn-benefit-card__text {
+  margin: 0;
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__base);
+  font-weight: var(--font__weight__normal);
+  line-height: 1.5;
+  color: var(--ol__red__900);
+}
+
+/* ============================================
+   CONTACT FORM SECTION
+   ============================================ */
+.pn-landing-section--contact {
+  background: var(--ol__monochrome__50);
+}
+
+.pn-form-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing__8);
+  border-radius: var(--radius__2xl);
+  background: var(--white);
+}
+
+/* Form Loading Overlay */
+.pn-form-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius__2xl);
+  z-index: 10;
+}
+
+.pn-form-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pn-form-spinner svg {
+  animation: spin 1s linear infinite;
+}
+
+.pn-form-spinner circle {
+  stroke: var(--ol__red__600);
+  stroke-dasharray: 80;
+  stroke-dashoffset: 60;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 80;
+  }
+  50% {
+    stroke-dashoffset: 20;
+  }
+  100% {
+    stroke-dashoffset: 80;
+  }
+}
+
+.pn-form-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: var(--spacing__6);
+  text-align: center;
+  width: 80%;
+}
+
+.pn-form-message p {
+  margin: 0;
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__lg);
+  font-weight: var(--font__weight__semibold);
+}
+
+.pn-form-message--success p {
+  color: var(--ol__red__600);
+}
+
+.pn-form-message--error p {
+  color: var(--ol__red__800);
+}
+
+/* Contact Form */
+.pn-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing__4);
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing__2);
+}
+
+/* Form Label */
+.pn-form-label {
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__base);
+  font-weight: var(--font__weight__medium);
+  line-height: 1.5;
+  color: var(--ol__monochrome__900);
+}
+
+.pn-form-required {
+  color: var(--ol__red__600);
+}
+
+/* Input Fields */
+.input {
+  width: 100% !important;
+  height: var(--spacing__14) !important;
+  padding: 0 var(--spacing__3) !important;
+  border: 1px solid var(--ol__monochrome__200);
+  border-radius: var(--radius__lg);
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__base);
+  font-weight: var(--font__weight__normal);
+  line-height: 1.5;
+  color: var(--ol__monochrome__950);
+  background: var(--white);
+  transition: border-color 125ms ease-in-out;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--ol__red__600);
+}
+
+.input::placeholder {
+  color: var(--ol__monochrome__300);
+}
+
+/* Textarea */
+.pn-form-textarea {
+  height: auto;
+  min-height: 120px;
+  padding: var(--spacing__3) !important;
+  resize: vertical;
+}
+
+/* Form Footer */
+.pn-form-footer {
+  margin: var(--spacing__2) 0 0 0;
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__xs);
+  font-weight: var(--font__weight__medium);
+  line-height: 1.5;
+  color: var(--ol__monochrome__500);
+  text-align: center;
+}
+
+/* ============================================
+   BUTTONS - Piano Design System
+   ============================================ */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--spacing__14);
+  padding: 0 var(--spacing__8);
+  border: none;
+  border-radius: var(--radius__sm);
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__base);
+  font-weight: var(--font__weight__bold);
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 125ms ease-in-out;
+}
+
+.btn--red {
+  background: var(--ol__red__600);
+  color: var(--white);
+}
+
+.btn--red:hover {
+  background: var(--ol__red__700);
+}
+
+.btn--red:active {
+  background: var(--ol__red__800);
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* ============================================
+   CONTACT INFO
+   ============================================ */
+.pn-contact-info {
+  margin-top: var(--spacing__8);
+  text-align: center;
+}
+
+.pn-contact-info__label {
+  margin: 0 0 var(--spacing__2) 0;
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__base);
+  font-weight: var(--font__weight__normal);
+  line-height: 1.5;
+  color: var(--ol__monochrome__700);
+}
+
+.pn-contact-info__email {
+  margin: 0;
+}
+
+.pn-contact-info__email a {
+  font-family: var(--font__family__inter);
+  font-size: var(--font__size__lg);
+  font-weight: var(--font__weight__bold);
+  line-height: 1.5;
+  color: var(--ol__red__600);
+  text-decoration: underline;
+  transition: color 125ms ease-in-out;
+}
+
+.pn-contact-info__email a:hover {
+  color: var(--ol__red__800);
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 767px) {
+  .pn-form-wrapper {
+    padding: var(--spacing__6) var(--spacing__4);
+  }
+  
+  .btn {
+    height: var(--spacing__12);
+  }
+  
+  .input {
+    height: var(--spacing__12) !important;
+  }
+}

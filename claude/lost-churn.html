@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="et">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============================================================
+     SCAFFOLDING (preserved from original)
+     ============================================================ */
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  .unbutton {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-shadow: none;
+    outline: 0;
+    border: 0;
+  }
+
+  img,
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .pn-main__logo {
+    margin: 0 auto;
+  }
+
+  svg {
+    margin: 0 auto;
+  }
+
+  button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  :where([hidden]),
+  .hidden {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* ============================================================
+     DESIGN TOKENS
+     ============================================================ */
+
+  :root {
+    --ol__red__50:  #fff0f1;
+    --ol__red__100: #ffdddf;
+    --ol__red__700: #e3000f;
+    --ol__red__800: #af0510;
+    --ol__monochrome__50:  #f5f6f6;
+    --ol__monochrome__100: #e5e8e8;
+    --ol__monochrome__200: #cdd3d4;
+    --ol__monochrome__400: #808d90;
+    --ol__monochrome__500: #657275;
+    --ol__monochrome__700: #4a5254;
+    --ol__monochrome__900: #3a3e3f;
+    --ol__monochrome__950: #17191a;
+    --ol__cream__50: #fff8eb;
+    --ol__yellow__500: #fcd700;
+    --ol__yellow__900: #74490f;
+    --white: #ffffff;
+    --black: #000000;
+    --font__family__fira: "Fira Sans Condensed", sans-serif;
+    --font__family__inter: "Inter", sans-serif;
+    --font__size__xs:   12px;
+    --font__size__sm:   14px;
+    --font__size__base: 16px;
+    --font__size__2xl:  24px;
+    --font__weight__normal:    400;
+    --font__weight__medium:    500;
+    --font__weight__bold:      700;
+    --font__weight__extrabold: 800;
+    --radius__sm: 4px;
+    --radius__md: 6px;
+    --radius__lg: 8px;
+    --radius__2xl: 16px;
+    --spacing__1:  4px;
+    --spacing__2:  8px;
+    --spacing__3:  12px;
+    --spacing__4:  16px;
+    --spacing__6:  24px;
+    --spacing__8:  32px;
+    --spacing__12: 48px;
+    --borderwidth__1: 1px;
+  }
+
+  /* ============================================================
+     BOILERPLATE WRAPPER
+     ============================================================ */
+
+  .pn-boilerplate {
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--white);
+    font-family: var(--font__family__inter);
+  }
+
+  /* ============================================================
+     MODAL BODY
+     ============================================================ */
+
+  .pn-lost-value__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: var(--spacing__3);
+    padding: var(--spacing__6) var(--spacing__4) var(--spacing__4);
+  }
+
+  /* ============================================================
+     DESIGN SYSTEM COMPONENTS
+     (matches style.css / DESIGN_SYSTEM.md exactly)
+     ============================================================ */
+
+  /* Modal title — Fira Sans Condensed, 24px, bold 700, red */
+  .pn-modal__title {
+    color: var(--ol__red__700);
+    font-weight: var(--font__weight__bold);
+    font-size: var(--font__size__2xl);
+    line-height: 1.2;
+    font-family: var(--font__family__fira);
+    text-align: center;
+  }
+
+  /* Modal subtitle — Inter, 16px, bold 700, near-black */
+  .pn-modal__subtitle {
+    color: var(--black);
+    font-weight: var(--font__weight__bold);
+    font-size: var(--font__size__base);
+    line-height: 1.35;
+    font-family: var(--font__family__inter);
+  }
+
+  /* Warning/notice banner — cream bg, matches .banner pattern */
+  .pn-modal__notice {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    gap: var(--spacing__2);
+    width: 100%;
+    padding: var(--spacing__3) var(--spacing__4);
+    border-radius: var(--radius__lg);
+    background: var(--ol__cream__50);
+    color: var(--ol__monochrome__700);
+    font-weight: var(--font__weight__medium);
+    font-size: var(--font__size__base);
+    line-height: 1.35;
+    font-family: var(--font__family__inter);
+  }
+
+  .pn-modal__notice-icon {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--ol__red__700);
+  }
+
+  /* List — matches .list / .list__item / .list__bullet / .list__text */
+  .list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: var(--spacing__2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .list__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    gap: var(--spacing__2);
+    text-align: left;
+  }
+
+  .list__bullet {
+    width: 12px;
+    min-width: 12px;
+    height: 12px;
+    margin-top: 4px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M5.13 8.74005L9.37005 4.5L8.62995 3.76995L5.13 7.27005L3.36 5.50005L2.62995 6.22995L5.13 8.74005ZM6 12C5.1767 12 4.40005 11.8425 3.67005 11.5275C2.94005 11.2125 2.30335 10.7833 1.75995 10.24C1.21665 9.69665 0.7875 9.05995 0.4725 8.32995C0.1575 7.59995 0 6.8233 0 6C0 5.17 0.1575 4.39 0.4725 3.66C0.7875 2.93 1.21665 2.295 1.75995 1.755C2.30335 1.215 2.94005 0.7875 3.67005 0.4725C4.40005 0.1575 5.1767 0 6 0C6.83 0 7.61 0.1575 8.34 0.4725C9.07 0.7875 9.705 1.215 10.245 1.755C10.785 2.295 11.2125 2.93 11.5275 3.66C11.8425 4.39 12 5.17 12 6C12 6.8233 11.8425 7.59995 11.5275 8.32995C11.2125 9.05995 10.785 9.69665 10.245 10.24C9.705 10.7833 9.07 11.2125 8.34 11.5275C7.61 11.8425 6.83 12 6 12ZM6 11C7.3933 11 8.57495 10.5133 9.54495 9.54C10.5149 8.5667 11 7.3867 11 6C11 4.6067 10.5149 3.42505 9.54495 2.45505C8.57495 1.48505 7.3933 1.00005 6 1.00005C4.6133 1.00005 3.4333 1.48505 2.46 2.45505C1.4867 3.42505 1.00005 4.6067 1.00005 6C1.00005 7.3867 1.4867 8.5667 2.46 9.54C3.4333 10.5133 4.6133 11 6 11Z" fill="%23E3000F"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px 12px;
+  }
+
+  .list__text {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    color: var(--ol__monochrome__950);
+    font-weight: var(--font__weight__medium);
+    font-size: var(--font__size__base);
+    line-height: 1.35;
+    font-family: var(--font__family__inter);
+  }
+
+  .list__text strong {
+    font-weight: var(--font__weight__bold);
+  }
+
+  .list__text a {
+    color: var(--ol__red__700);
+    font-weight: var(--font__weight__bold);
+    text-decoration: underline;
+    -webkit-transition: color 125ms ease-in-out;
+    transition: color 125ms ease-in-out;
+  }
+
+  .list__text a:hover {
+    color: var(--ol__red__800);
+  }
+
+  /* Buttons — matches .btn / .btn--red / .btn--outline from style.css */
+  .btn {
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--spacing__12);
+    padding: 0 var(--spacing__8);
+    border: none;
+    border-radius: var(--radius__sm);
+    font-weight: var(--font__weight__bold);
+    font-size: var(--font__size__base);
+    line-height: 1.35;
+    font-family: var(--font__family__inter);
+    cursor: pointer;
+    -webkit-transition: background-color 125ms ease-in-out, color 125ms ease-in-out;
+    transition: background-color 125ms ease-in-out, color 125ms ease-in-out;
+  }
+
+  .btn--red {
+    color: var(--white);
+    background: var(--ol__red__700);
+  }
+
+  .btn--red:hover {
+    background: var(--ol__red__800);
+  }
+
+  /* Secondary / outline variant — not in style.css, added here */
+  .btn--outline {
+    color: var(--ol__red__700);
+    background: var(--white);
+    border: var(--borderwidth__1) solid var(--ol__red__700);
+  }
+
+  .btn--outline:hover {
+    background: var(--ol__red__50);
+  }
+
+  /* Actions row */
+  .pn-lost-value__actions {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: var(--spacing__3);
+    padding-top: var(--spacing__1);
+  }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+
+  @media (max-width: 480px) {
+    .pn-lost-value__actions {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
+      gap: var(--spacing__2);
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+</style>
+
+<config width="648" close-button-type="boilerplate"></config>
+<div churn-prevention-template class="pn-boilerplate pn-boilerplate--lost-value">
+
+  <!-- Body -->
+  <div class="pn-lost-value__body">
+
+    <!-- Logo -->
+    <img class="pn-main__logo" src="[%% logo-href %%]" width="140" height="27" alt="Ohtuleht Logo" />
+
+    <!-- Optional header image (preserved) -->
+    <img hidden class="pn-lost-value__pic" ng-if="'[%% headerImage %%]' !== ''" src="[%% headerImage %%]" alt="" />
+    <img hidden class="pn-lost-value__pic" ng-if="app.image1 && '[%% headerImage %%]' === ''" ng-src="{{app.image1}}" width="84" height="84" alt="" />
+    <svg hidden class="pn-lost-value__pic" xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 84 84" fill="none">
+      <g clip-path="url(#clip0_171_38063)">
+        <path d="M66 72V24H0V72H12V84L24 72H66Z" fill="url(#paint0_linear_171_38063)" />
+        <path d="M84 48V0H18V48H60L72 60V48H84Z" fill="url(#paint1_linear_171_38063)" />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M39 24.5C39 25.3284 38.3284 26 37.5 26C36.6716 26 36 25.3284 36 24.5C36 23.6716 36.6716 23 37.5 23C38.3284 23 39 23.6716 39 24.5ZM52 24.5C52 25.3284 51.3284 26 50.5 26C49.6716 26 49 25.3284 49 24.5C49 23.6716 49.6716 23 50.5 23C51.3284 23 52 23.6716 52 24.5ZM63.5 26C64.3284 26 65 25.3284 65 24.5C65 23.6716 64.3284 23 63.5 23C62.6716 23 62 23.6716 62 24.5C62 25.3284 62.6716 26 63.5 26Z"
+          fill="#6083C0"
+        />
+      </g>
+      <defs>
+        <linearGradient id="paint0_linear_171_38063" x1="3.1439e-07" y1="84" x2="75" y2="39" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#D7DDEB" />
+          <stop offset="1" stop-color="#7E9ACB" />
+        </linearGradient>
+        <linearGradient id="paint1_linear_171_38063" x1="18" y1="0" x2="76.6427" y2="66.4891" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#EBEFF6" />
+          <stop offset="1" stop-color="#DAE2F0" />
+        </linearGradient>
+        <clipPath id="clip0_171_38063">
+          <rect width="84" height="84" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+
+    <!-- Title (server-replaced) -->
+    <h1 class="pn-modal__title">[%% header %%]</h1>
+
+    <!-- Warning notice -->
+    <div class="pn-modal__notice">
+      <span class="pn-modal__notice-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm8-3a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 5zm0 7a1 1 0 100-2 1 1 0 000 2z" fill="currentColor"/>
+        </svg>
+      </span>
+      <t>Tühistades kaotad ligipääsu kogu tasulisele sisule pärast kehtiva tellimusperioodi lõppu!</t>
+    </div>
+
+    <!--
+    <t arg0="{{activeSubscription.name}}" arg1="{{activeSubscription.expirationDate | date:'longDate'}}">
+      <div class="pn-modal__notice">
+        <span class="pn-modal__notice-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm8-3a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 5zm0 7a1 1 0 100-2 1 1 0 000 2z" fill="currentColor"/>
+          </svg>
+        </span>
+        Täna tühistades ei pääse Sa enam kogu sisule ligi alates <strong>{1}</strong>.
+      </div>
+    </t>
+    -->
+
+    <!-- Benefits list -->
+    <h2 class="pn-modal__subtitle"><t>Tuletame meelde, et Õhtuleht Kirjastuse digitellimusega saad:</t></h2>
+
+    <ul class="list">
+      <li class="list__item">
+        <div class="list__bullet"></div>
+        <div class="list__text">
+          <t><strong>Piiramatu ligipääsu</strong> kogu sisule alates poliitikast ja majandusest kuni spordi ja meelelahutuseni.</t>
+        </div>
+      </li>
+      <li class="list__item">
+        <div class="list__bullet"></div>
+        <div class="list__text">
+          <t>Õhtuleht TV ja Raadio pakuvad võimalust <strong>vaadata</strong> kõiki meie põnevaid saateid staaride sünnipäevadest esoteerikani ja <strong>kuulata</strong> podcaste.</t>
+        </div>
+      </li>
+      <li class="list__item">
+        <div class="list__bullet"></div>
+        <div class="list__text">
+          <t>Oma <strong>vaimu terava</strong> hoida põnevate digiristsõnade ja mälumängudega.</t>
+        </div>
+      </li>
+      <li class="list__item">
+        <div class="list__bullet"></div>
+        <div class="list__text">
+          <t>Ligipääsu <strong>kõikidele Toidutare retseptidele</strong>, kust leiad nii lihtsaid argitoitusid kui ka ahvatlevaid piduroogasid.</t>
+        </div>
+      </li>
+      <li class="list__item">
+        <div class="list__bullet"></div>
+        <div class="list__text">
+          <t><strong>Jagada lugemisõigust</strong> kuni nelja pereliikme või sõbraga.</t>
+        </div>
+      </li>
+      <li class="list__item">
+        <div class="list__bullet"></div>
+        <div class="list__text">
+          <t>
+            Osa
+            <a href="https://lojaalsus.ohtulehtkirjastus.ee/" target="_blank"> Õhtuleht Kirjastuse lojaalsusprogrammist</a>, kus
+            neli korda aastas loosime kõigi tellijate vahel välja 1000 € väärtuses kingitusi.
+          </t>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Actions -->
+    <div class="pn-lost-value__actions">
+      <button class="btn btn--outline unbutton" type="button" ng-click="close()" external-event="{{acpEvents.nextStep}}">
+        <t>[%% subscriptionCanceledText %%]</t>
+      </button>
+      <button class="btn btn--red unbutton" type="button" ng-click="close()" external-event="{{acpEvents.retainSubscription}}">
+        <t>[%% subscriptionRetainedText %%]</t>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+  </body>
+</html>

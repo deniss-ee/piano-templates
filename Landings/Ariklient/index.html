@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="et">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ärikliendi Digipakett - Õhtuleht Kirjastus</title>
+        <meta name="description" content="Õhtuleht Kirjastuse ärikliendi digipakett">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+<!-- Hero Section -->
+<section class="pn-landing-hero">
+  <div class="pn-landing-container">
+    <div class="pn-landing-hero__layout">
+      <div class="pn-landing-hero__content">
+        <h1 class="pn-landing-hero__title">[%% lead-text %%]</h1>
+        <p class="pn-landing-hero__subtitle">[%% headline-text %%]</p>
+        <a href="#oform" 
+           rel="noopener" 
+           class="btn btn--red pn-landing-hero__cta" 
+           onclick="document.getElementById('oform').scrollIntoView({behavior: 'smooth'})">
+          võta ühendust
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="pn-landing-section pn-landing-section--benefits">
+  <div class="pn-landing-container">
+    <h2 class="pn-landing-section__title">[%% benefits-title %%]</h2>
+    
+    <div class="pn-benefits-grid">
+      <div class="pn-benefit-card">
+        <span class="pn-benefit-card__number">1</span>
+        <h3 class="pn-benefit-card__title">[%% benefits-subtitle-1 %%]</h3>
+        <p class="pn-benefit-card__text">[%% benefits-text-1 %%]</p>
+      </div>
+      
+      <div class="pn-benefit-card">
+        <span class="pn-benefit-card__number">2</span>
+        <h3 class="pn-benefit-card__title">[%% benefits-subtitle-2 %%]</h3>
+        <p class="pn-benefit-card__text">[%% benefits-text-2 %%]</p>
+      </div>
+      
+      <div class="pn-benefit-card">
+        <span class="pn-benefit-card__number">3</span>
+        <h3 class="pn-benefit-card__title">[%% benefits-subtitle-3 %%]</h3>
+        <p class="pn-benefit-card__text">[%% benefits-text-3 %%]</p>
+      </div>
+      
+      <div class="pn-benefit-card">
+        <span class="pn-benefit-card__number">4</span>
+        <h3 class="pn-benefit-card__title">[%% benefits-subtitle-4 %%]</h3>
+        <p class="pn-benefit-card__text">[%% benefits-text-4 %%]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="pn-landing-section pn-landing-section--contact">
+  <div class="pn-landing-container">
+    <h2 class="pn-landing-section__title pn-landing-section__title--center">
+      Küsi oma ettevõttele <strong>personaalne pakkumine</strong>
+    </h2>
+    
+    <div class="pn-form-wrapper">
+      <!-- Loading Overlay -->
+      <div class="pn-form-loading hidden">
+        <div class="pn-form-spinner">
+          <svg width="50" height="50">
+            <circle cx="25" cy="25" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"></circle>
+          </svg>
+        </div>
+        <div class="pn-form-message pn-form-message--success hidden">
+          <p>Aitäh! Võtame Sinuga ühendust!</p>
+        </div>
+        <div class="pn-form-message pn-form-message--error hidden">
+          <p>Tekkis viga, proovi uuesti.</p>
+        </div>
+      </div>
+      
+      <!-- Contact Form -->
+      <form class="pn-contact-form" id="oform">
+        <div class="form-group">
+          <label class="pn-form-label" for="name-1">
+            Ettevõtte nimi <span class="pn-form-required">*</span>
+          </label>
+          <input type="text" 
+                 class="input" 
+                 id="name-1" 
+                 name="organization" 
+                 placeholder="Ettevõtte nimi" 
+                 required>
+        </div>
+        
+        <div class="form-group">
+          <label class="pn-form-label" for="name-2">
+            Sinu nimi <span class="pn-form-required">*</span>
+          </label>
+          <input type="text" 
+                 class="input" 
+                 id="name-2" 
+                 name="name" 
+                 placeholder="Sinu nimi" 
+                 required>
+        </div>
+        
+        <div class="form-group">
+          <label class="pn-form-label" for="email">
+            E-mail <span class="pn-form-required">*</span>
+          </label>
+          <input type="email" 
+                 class="input" 
+                 id="email" 
+                 name="email" 
+                 placeholder="E-mail" 
+                 required>
+        </div>
+        
+        <div class="form-group">
+          <label class="pn-form-label" for="tel">
+            Telefoninumber <span class="pn-form-required">*</span>
+          </label>
+          <input type="tel" 
+                 class="input" 
+                 id="tel" 
+                 name="phone" 
+                 placeholder="Telefoninumber" 
+                 required>
+        </div>
+        
+        <div class="form-group">
+          <label class="pn-form-label" for="seats">
+            Kasutajate arv <span class="pn-form-required">*</span>
+          </label>
+          <input type="number" 
+                 class="input" 
+                 id="seats" 
+                 name="seats" 
+                 placeholder="Kasutajate arv" 
+                 required>
+        </div>
+        
+        <div class="form-group">
+          <label class="pn-form-label" for="lisainfo">Lisainfo</label>
+          <textarea class="input pn-form-textarea" 
+                    id="lisainfo" 
+                    name="lisainfo" 
+                    placeholder="Lisainfo" 
+                    rows="6"></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn--red btn--full">
+          küsin pakkumist
+        </button>
+        
+        <p class="pn-form-footer">Vastame kahe tööpäeva jooksul.</p>
+      </form>
+    </div>
+    
+    <div class="pn-contact-info">
+      <p class="pn-contact-info__label">Vajad lisainfot? Võta meiega ühendust:</p>
+      <p class="pn-contact-info__email">
+        <a href="mailto:tellimine@ohtulehtkirjastus.ee">[%% contact-email %%]</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div custom-script>
+  // Input sanitization
+  var numberInput = document.getElementById("tel");
+  numberInput.addEventListener("input", function (event) {
+    var inputValue = event.target.value;
+    var sanitizedValue = inputValue.replace(/[^0-9+]/g, '');
+    event.target.value = sanitizedValue;
+  });
+
+  var seatsInput = document.getElementById("seats");
+  seatsInput.addEventListener("input", function (event) {
+    var inputValue = event.target.value;
+    var sanitizedValue = inputValue.replace(/[^0-9+]/g, '');
+    event.target.value = sanitizedValue;
+  });
+
+  var customInput2 = document.getElementById("name-2");
+  function handleInput(event) {
+    var inputValue = event.target.value;
+    var sanitizedValue = inputValue.replace(/[^a-zA-ZŽžÀ-ÿ\s]+/g, '');
+    event.target.value = sanitizedValue;
+  }
+  customInput2.addEventListener("input", handleInput);
+
+  // Form submission
+  var result = {};
+  var loadingSection = document.querySelector(".pn-form-loading");
+  var loading = document.querySelector(".pn-form-spinner");
+  var successMessage = document.querySelector(".pn-form-message--success");
+  var errorMessage = document.querySelector(".pn-form-message--error");
+  var scriptURL = "https://s.ohtuleht.ee/ariklient";
+  var form = document.forms["oform"];
+  
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    showLoadingIndicator();
+    var formData = new FormData(form);
+    result["type"] = "Ärikliendi pakkumised";
+    for (var entry of formData.entries()) {
+      if (!entry[0].startsWith("_")) {
+        result[entry[0]] = entry[1];
+      }
+    }
+    result = JSON.stringify(result);
+    var request = new XMLHttpRequest();
+    request.open("POST", scriptURL, true);
+    request.setRequestHeader("Content-Type", "application/json");
+    request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+        showSuccessMessage(request.response);
+      } else {
+        showErrorMessage(request.statusText);
+      }
+      document.getElementById('oform').reset();
+    };
+    request.send(result);
+  });
+
+  function showLoadingIndicator() {
+    loadingSection.classList.remove("hidden");
+  }
+
+  function showErrorMessage(e) {
+    setTimeout(function () {
+      errorMessage.classList.remove("hidden");
+      loading.classList.add("hidden");
+    }, 500);
+    setTimeout(function () {
+      errorMessage.classList.add("hidden");
+      loadingSection.classList.add("hidden");
+    }, 5000);
+  }
+
+  function showSuccessMessage(e) {
+    setTimeout(function () {
+      successMessage.classList.remove("hidden");
+      loading.classList.add("hidden");
+    }, 500);
+    setTimeout(function () {
+      successMessage.classList.add("hidden");
+      loadingSection.classList.add("hidden");
+    }, 5000);
+  }
+</div>
+
+    </body>
+</html>
