@@ -15,43 +15,56 @@
   --white: #ffffff;
   
   /* Red Scale */
-  --ol__red__50: #FFF5F5;
-  --ol__red__100: #FFEBEC;
-  --ol__red__200: #FFD6D9;
-  --ol__red__300: #FFB8BC;
-  --ol__red__400: #FF8F96;
-  --ol__red__500: #FF616B;
-  --ol__red__600: #F20312;
-  --ol__red__700: #C7000D;
-  --ol__red__800: #AF0510;
-  --ol__red__900: #840B13;
-  --ol__red__950: #520005;
+  --ol__red__50: #fff0f1;
+  --ol__red__100: #ffdddf;
+  --ol__red__200: #ffc1c5;
+  --ol__red__300: #ff959c;
+  --ol__red__400: #ff5964;
+  --ol__red__500: #ff2634;
+  --ol__red__600: #fc0616;
+  --ol__red__700: #e3000f;
+  --ol__red__800: #af0510;
+  --ol__red__900: #900c15;
+  --ol__red__950: #500005;
   
   /* Yellow Scale */
-  --ol__yellow__50: #FFF9D6;
-  --ol__yellow__100: #FFF09E;
-  --ol__yellow__200: #FFDF33;
-  --ol__yellow__300: #F5C500;
-  --ol__yellow__400: #DBA700;
-  --ol__yellow__500: #CF8A02;
-  --ol__yellow__600: #BD6C00;
-  --ol__yellow__700: #A54F04;
-  --ol__yellow__800: #863D09;
-  --ol__yellow__900: #70330B;
-  --ol__yellow__950: #461C01;
+  --ol__yellow__50: #ffffe7;
+  --ol__yellow__100: #fdffc1;
+  --ol__yellow__200: #ffff86;
+  --ol__yellow__300: #fff641;
+  --ol__yellow__400: #ffe80d;
+  --ol__yellow__500: #fcd700;
+  --ol__yellow__600: #d1a000;
+  --ol__yellow__700: #a67302;
+  --ol__yellow__800: #89590a;
+  --ol__yellow__900: #74490f;
+  --ol__yellow__950: #442604;
+  
+  /* Cream Scale */
+  --ol__cream__50: #fff8eb;
+  --ol__cream__100: #ffebc4;
+  --ol__cream__200: #ffd688;
+  --ol__cream__300: #ffbc4a;
+  --ol__cream__400: #ffa220;
+  --ol__cream__500: #f97d07;
+  --ol__cream__600: #dd5902;
+  --ol__cream__700: #b73a06;
+  --ol__cream__800: #942c0c;
+  --ol__cream__900: #7a250d;
+  --ol__cream__950: #461102;
   
   /* Monochrome Scale */
-  --ol__monochrome__50: #F7F7F7;
-  --ol__monochrome__100: #EFEFF0;
-  --ol__monochrome__200: #DFDFE2;
-  --ol__monochrome__300: #CACACE;
-  --ol__monochrome__400: #B1B1B9;
-  --ol__monochrome__500: #98989F;
-  --ol__monochrome__600: #7E7E8B;
-  --ol__monochrome__700: #686873;
-  --ol__monochrome__800: #53535A;
-  --ol__monochrome__900: #46464E;
-  --ol__monochrome__950: #292932;
+  --ol__monochrome__50: #f5f6f6;
+  --ol__monochrome__100: #e5e8e8;
+  --ol__monochrome__200: #cdd3d4;
+  --ol__monochrome__300: #aab3b6;
+  --ol__monochrome__400: #808d90;
+  --ol__monochrome__500: #657275;
+  --ol__monochrome__600: #566064;
+  --ol__monochrome__700: #4a5254;
+  --ol__monochrome__800: #414749;
+  --ol__monochrome__900: #3a3e3f;
+  --ol__monochrome__950: #17191a;
   
   /* Typography */
   --font__family__fira: "Fira Sans Condensed", sans-serif;

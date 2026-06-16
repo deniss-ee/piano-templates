@@ -1,0 +1,181 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <script type="text/ng-template" id="/widget/checkout/component/partials/shared-subscription-component.html">
+      <div class="ss__body">
+          <h1 class="ss__h1"><t context="checkout.platform">Sisesta jagatud kontode e-posti aadressid allpool</t></h1>
+
+          <div class="ss__subheading"><t context="checkout.platform">Ühtlasi saad kontosid igal ajal täpsustada jaotises <span class="ss__subheading--black">Minu konto</span></t></div>
+
+          <div class="" ng-show="storage.users.length > 0">
+              <div class="ss__border--top ss__border--bottom ss__indent" ng-class="{'ss__editable__row--last': (storage.users.length === (storage.editableUserIndex+1)) && (storage.users.length === ($index+1)) && isEditingFormShown()}" ng-repeat="user in storage.users">
+                  <div class="ss__user-info-wrapper ss__row" ng-show="storage.user.email !== user.email">
+                      <div class="ss__flex-row--left-column">
+                          {{user.email}}
+                          <span ng-if="user.completeName.length">
+                              -
+                              <span class="ss__color--grey">{{user.completeName}}</span>
+                          </span>
+                      </div>
+                      <div class="ss__flex-row--right-column">
+                          <button type="button" class="ss__row-button ss__row-button--edit" ng-click="editUser(user, $index)" ng-disabled="storage.showForm === true"><t context="checkout.platform">Edit</t></button>
+                          <button type="button" class="ss__row-button ss__row-button--delete" ng-click="deleteUser(user)" ng-disabled="storage.showForm === true"><t context="checkout.platform">Delete user</t></button>
+                      </div>
+                  </div>
+                  <div ng-if="storage.user.email === user.email">
+                      <div shared-subscription-form-component storage="storage"></div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="ss__single-form" ng-if="!isUsersExists() || (isEditingFormShown() && !isEditingUser())" shared-subscription-form-component storage="storage"></div>
+          <div class="user-control" ng-class="{'no-user-control': isEditingFormShown() && storage.sharedAccountsLimit > 0 && isUsersExists()}">
+              <div ng-if="!isUsersExists()"><t context="checkout.platform" arg0="{{storage.sharedAccountsLimit}}">Saad lisada kuni {0} jagatud konto(t)</t></div>
+              <button class="ss__add-shared-account" ng-show="canAddUser()" ng-click="addUser()"><t context="checkout.platform">Lisa jagatud konto <span class="ss__add-shared-account--limit">({{storage.sharedAccountsLimit}} veel)</span></t></button>
+              <span class="ss__color--grey" ng-show="storage.sharedAccountsLimit === 0"><t context="checkout.platform">Jagatud kontode limiit on täis</t></span>
+          </div>
+
+      </div>
+      <div class="footer-modal ss-footer-modal">
+          <a ng-show="!isUsersExists() && !isFormDirty()" ng-click="skip()" class="button complete-purchase ss-complete-purchase">
+              <t context="checkout.platform">Jäta vahele</t>
+          </a>
+          <a ng-show="isUsersExists() || (!isUsersExists() && isFormDirty())" ng-click="next()" class="button complete-purchase ss-complete-purchase" ng-class="{'disabled': isFormDirty() || isEditingFormShown() }">
+              <t context="checkout.platform">Järgmine</t>
+          </a>
+      </div>
+    </script>
+
+    <script type="text/ng-template" id="/widget/checkout/component/partials/shared-subscription-form-component.html">
+      <form name="manageSharedUserForm" class="ss__form">
+          <div class="ss__row">
+              <div class="ss__row-right-column" style="float: none !important;width: 96px !important;padding-top: 0 !important;display: flex !important;align-items: center !important;justify-content: space-between !important;position: absolute !important;right: 52px !important;margin-top: 6px !important;z-index: 100 !important;">
+                  <button type="button" class="ss__row-button ss__row-button--cancel" ng-disabled="storage.users.length === 0" ng-click="cancelEditingUser()" style="display: none !important; background-image: url(data:image/svg+xml,%3Csvg\ xmlns=\'http://www.w3.org/2000/svg\'\ data-name=\'Layer\ 2\'\ viewbox=\'0\ 0\ 20\ 20\'%3E%3Cpath\ d=\'m4.4\ 17.8-2.2-2.2L7.8\ 10\ 2.2\ 4.4l2.2-2.2L10\ 7.8l5.6-5.6\ 2.2\ 2.2-5.6\ 5.6\ 5.6\ 5.6-2.2\ 2.2-5.6-5.6-5.6\ 5.6Z\'\ style=\'fill:%23e3000f;stroke-width:0\'/%3E%3C/svg%3E) !important"><t context="checkout.platform">Cancel</t></button>
+                  <button type="button" class="ss__row-button ss__row-button--apply" ng-disabled="storage.isFormDirty !== true" ng-click="validateUser()" style="opacity: 1 !important; width: 83px !important; height: 28px !important; background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MyIgaGVpZ2h0PSIyOCIgZmlsbD0ibm9uZSI+PHJlY3Qgd2lkdGg9IjgzIiBoZWlnaHQ9IjI4IiBmaWxsPSIjRTMwMDBGIiByeD0iNCI+PC9yZWN0PjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xOS4yMDYgOS4yOThWMTlIMTYuOTFWOS4yOThoMi4yOTZabTUuNTcyIDAtMy4wOTQgNC4zNTRMMjUuMDMgMTloLTIuNjZsLTMuMDk0LTUuMTggMy4wOC00LjUyMmgyLjQyMlptMy4yODcgMFYxOUgyNS43N1Y5LjI5OGgyLjI5NlpNMzcuMzQ3IDE5SDM0LjQybC0yLjgtNy41MThjLjA5My43MzcuMTYzIDEuMzkuMjEgMS45Ni4wNTYuNTYuMDg0IDEuMjI3LjA4NCAyLjAwMlYxOUgyOS44N1Y5LjI5OGgyLjg1NmwyLjg3IDcuNTMyYTIyLjg0IDIyLjg0IDAgMCAxLS4zMDgtMy42MTJ2LTMuOTJoMi4wNThWMTlabTkuMjgzIDBoLTIuOTI2bC0yLjgtNy41MThjLjA5My43MzcuMTYzIDEuMzkuMjEgMS45Ni4wNTYuNTYuMDg0IDEuMjI3LjA4NCAyLjAwMlYxOWgtMi4wNDRWOS4yOThoMi44NTZsMi44NyA3LjUzMmEyMi44NCAyMi44NCAwIDAgMS0uMzA4LTMuNjEydi0zLjkyaDIuMDU4VjE5Wm00LjEwMy05LjcwMlYxOWgtMi4yOTZWOS4yOThoMi4yOTZabTguNDQyIDAtLjIyNCAxLjc2NGgtMi4zOTRWMTlINTQuMjZ2LTcuOTM4aC0yLjUwNlY5LjI5OGg3LjQyWk02NC41MTIgMTlsLS41MDQtMi4wODZINjEuMThMNjAuNjkgMTloLTIuMzhsMi45MjYtOS43MDJoMi43ODZMNjYuOTQ4IDE5aC0yLjQzNlptLTIuOTQtMy43NTJoMi4wNDRsLTEuMDIyLTQuMjg0LTEuMDIyIDQuMjg0WiI+PC9wYXRoPjwvc3ZnPg==)no-repeat !important;"><t context="checkout.platform">Apply</t></button>
+              </div>
+              <div class="ss__row-left-column" style="margin-right: 0px !important;">
+                  <input type="text"
+                         id="ss-user-email"
+                         class="ss__row-input regular-border"
+                         name="email"
+                         ng-model="user.email"
+                         ng-keydown="onKeyDown($event)"
+                         ng-change="checkIsFormValid()"
+                         placeholder="{{'E-post...' | tc:'checkout.platform'}}"
+                         autocomplete="off"
+                         auto-focus
+                         required />
+              </div>
+          </div>
+          <div class="ss__row">
+              <div class="ss__row-left-column" style="margin-right: 0px !important;">
+                  <div class="ss__row-left-column__first-half">
+                      <input type="text"
+                             class="ss__row-input regular-border"
+                             ng-model="user.firstName"
+                             name="firstName"
+                             ng-keydown="onKeyDown($event)"
+                             ng-change="checkIsFormValid()"
+                             placeholder="{{'Eesnimi (valikuline)' | tc:'checkout.platform'}}"
+                             autocomplete="no-autocomplete" />
+                  </div>
+                  <div class="ss__row-right-column__second-half">
+                      <input type="text"
+                             class="ss__row-input regular-border"
+                             ng-model="user.lastName"
+                             name="lastName"
+                             ng-keydown="onKeyDown($event)"
+                             ng-change="checkIsFormValid()"
+                             placeholder="{{'Perekonnanimi (valikuline)' | tc:'checkout.platform'}}"
+                             autocomplete="no-autocomplete" />
+                  </div>
+              </div>
+          </div>
+      </form>
+    </script>
+
+    <!-- redeem-shared-subscription-component -->
+    <script type="text/ng-template" id="/widget/checkout/component/partials/redeem-shared-subscription-component.html">
+      <div account-header-component></div>
+
+          <div ng-if="loaded === true">
+              <div ng-if="hasNoErrors === true">
+                  <div ng-if="isUserLoggedIn === true">
+                      <div ng-if="isRedeemedEmailMatches === true">
+                          <div class="receipt">
+                              <div class="content purchase">
+                                  <h1 class="you-already-have-access">
+                                      <t context="checkout.platform">Subscription successfully activated!</t>
+                                  </h1>
+
+                                  <t context="checkout.platform" arg0="{{parentEmail}}">You have successfully joined {0} subscription! Click <a href="{{businessUrl}}" target="_blank">here</a> to visit our homepage.</t>
+                              </div>
+                          </div>
+                          <div class="redeem-ss-footer-modal redeem-ss-footer-modal--receipt">
+                              <button ng-click="close()" class="button redeem-ss-button"><t context="checkout.platform">Close</t></button>
+                          </div>
+                      </div>
+                      <div ng-if="isRedeemedEmailMatches === false">
+                          <div class="receipt">
+                              <div class="content purchase">
+                                  <h1 class="you-already-have-access">
+                                      <t context="checkout.platform">Thanks for your registration!</t>
+                                  </h1>
+
+                                  <t context="checkout.platform">This email address has not been named on a shared subscription. Please verify that you registered with the same email that your invitation was sent to. You can modify your email in <span class="black">My Account</span> at any time.</t>
+                              </div>
+                          </div>
+                          <div class="redeem-ss-footer-modal redeem-ss-footer-modal--receipt">
+                              <button ng-click="close()" class="button redeem-ss-button"><t context="checkout.platform">Close</t></button>
+                          </div>
+                      </div>
+                  </div>
+                  <div ng-if="isUserLoggedIn === false">
+                      <div class="redeem-ss-body">
+                          <h1 class="redeem-ss-heading">
+                              <t context="checkout.platform">Your access is just moments away</t>
+                          </h1>
+                          <div class="hint ss-hint mb4"><t context="checkout.platform">Please verify that you registered with the same email that your invitation was sent to.</t></div>
+                          <div class="hint ss-hint"><t context="checkout.platform">After that please click on <span class="black">Redeem</span> to continue.</t></div>
+                      </div>
+                      <div class="redeem-ss-footer-modal">
+                          <button ng-click="close()" class="button redeem-ss-button redeem-ss-button--gray"><t context="checkout.platform">Cancel</t></button>
+                          <button ng-click="register()" class="button redeem-ss-button"><t context="checkout.platform">Redeem</t></button>
+                      </div>
+                  </div>
+              </div>
+              <div ng-if="hasNoErrors === false">
+                  <div class="redeem-ss-body">
+                      <h1 class="redeem-ss-heading">
+                          <t context="checkout.platform">Something went wrong</t>
+                      </h1>
+                      <div class="hint ss-hint">{{errorMessage}}</div>
+                  </div>
+                  <div class="redeem-ss-footer-modal">
+                      <button ng-click="close()" class="button redeem-ss-button"><t context="checkout.platform">Close</t></button>
+                  </div>
+              </div>
+          </div>
+          <div ng-if="loaded === false">
+              <div class="redeem-ss-body">
+                  <t context="checkout.platform">Loading...</t>
+              </div>
+              <div class="redeem-ss-footer-modal">
+                  <button ng-click="close()" class="button redeem-ss-button"><t context="checkout.platform">Close</t></button>
+              </div>
+          </div>
+    </script>
+  </body>
+</html>

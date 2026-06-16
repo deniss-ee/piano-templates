@@ -1,0 +1,1387 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+:root {
+  --black: #000000;
+  --borderwidth__0: 0px;
+  --borderwidth__1: 1px;
+  --borderwidth__2: 2px;
+  --borderwidth__4: 4px;
+  --borderwidth__8: 8px;
+  --font__family__fira: "Fira Sans Condensed", sans-serif;
+  --font__family__inter: "Inter", sans-serif;
+  --font__family__mono: "Fira Mono", monospace;
+  --font__family__serif: "Georgia", serif;
+  --font__size__2xl: 24px;
+  --font__size__3xl: 30px;
+  --font__size__4xl: 36px;
+  --font__size__5xl: 48px;
+  --font__size__6xl: 60px;
+  --font__size__7xl: 72px;
+  --font__size__8xl: 96px;
+  --font__size__9xl: 128px;
+  --font__size__base: 16px;
+  --font__size__lg: 18px;
+  --font__size__sm: 14px;
+  --font__size__xl: 20px;
+  --font__size__xs: 12px;
+  --font__style__italic: italic;
+  --font__style__notitalic: normal;
+  --font__weight__black: 900;
+  --font__weight__bold: 700;
+  --font__weight__extrabold: 800;
+  --font__weight__extralight: 200;
+  --font__weight__light: 300;
+  --font__weight__medium: 500;
+  --font__weight__normal: 400;
+  --font__weight__semibold: 600;
+  --font__weight__thin: 100;
+  --ol__cream__100: #ffebc4;
+  --ol__cream__200: #ffd688;
+  --ol__cream__300: #ffbc4a;
+  --ol__cream__400: #ffa220;
+  --ol__cream__50: #fff8eb;
+  --ol__cream__500: #f97d07;
+  --ol__cream__600: #dd5902;
+  --ol__cream__700: #b73a06;
+  --ol__cream__800: #942c0c;
+  --ol__cream__900: #7a250d;
+  --ol__cream__950: #461102;
+  --ol__monochrome__100: #e5e8e8;
+  --ol__monochrome__200: #cdd3d4;
+  --ol__monochrome__300: #aab3b6;
+  --ol__monochrome__400: #808d90;
+  --ol__monochrome__50: #f5f6f6;
+  --ol__monochrome__500: #657275;
+  --ol__monochrome__600: #566064;
+  --ol__monochrome__700: #4a5254;
+  --ol__monochrome__800: #414749;
+  --ol__monochrome__900: #3a3e3f;
+  --ol__monochrome__950: #17191a;
+  --ol__red__100: #ffdddf;
+  --ol__red__200: #ffc1c5;
+  --ol__red__300: #ff959c;
+  --ol__red__400: #ff5964;
+  --ol__red__50: #fff0f1;
+  --ol__red__500: #ff2634;
+  --ol__red__600: #fc0616;
+  --ol__red__700: #e3000f;
+  --ol__red__800: #af0510;
+  --ol__red__900: #900c15;
+  --ol__red__950: #500005;
+  --ol__yellow__100: #fdffc1;
+  --ol__yellow__200: #ffff86;
+  --ol__yellow__300: #fff641;
+  --ol__yellow__400: #ffe80d;
+  --ol__yellow__50: #ffffe7;
+  --ol__yellow__500: #fcd700;
+  --ol__yellow__600: #d1a000;
+  --ol__yellow__700: #a67302;
+  --ol__yellow__800: #89590a;
+  --ol__yellow__900: #74490f;
+  --ol__yellow__950: #442604;
+  --radius__2xl: 16px;
+  --radius__3xl: 24px;
+  --radius__4xl: 32px;
+  --radius__full: 9999px;
+  --radius__lg: 8px;
+  --radius__md: 6px;
+  --radius__none: 0px;
+  --radius__sm: 4px;
+  --radius__xl: 12px;
+  --radius__xs: 2px;
+  --spacing__0: 0px;
+  --spacing__1: 4px;
+  --spacing__10: 40px;
+  --spacing__11: 44px;
+  --spacing__12: 48px;
+  --spacing__14: 56px;
+  --spacing__16: 64px;
+  --spacing__2: 8px;
+  --spacing__20: 80px;
+  --spacing__24: 96px;
+  --spacing__28: 112px;
+  --spacing__3: 12px;
+  --spacing__32: 128px;
+  --spacing__36: 144px;
+  --spacing__4: 16px;
+  --spacing__40: 160px;
+  --spacing__44: 176px;
+  --spacing__48: 192px;
+  --spacing__5: 20px;
+  --spacing__52: 208px;
+  --spacing__56: 224px;
+  --spacing__6: 24px;
+  --spacing__60: 240px;
+  --spacing__64: 256px;
+  --spacing__7: 28px;
+  --spacing__72: 288px;
+  --spacing__8: 32px;
+  --spacing__80: 320px;
+  --spacing__9: 36px;
+  --spacing__96: 384px;
+  --white: #ffffff;
+}
+
+.tabs .ma-navigation__tab a,
+.tabs li a {
+  height: var(--spacing__10) !important;
+  margin-bottom: 2px !important;
+  /*
+  padding: 0 !important;
+  */
+  border: 0 !important;
+  border-radius: 4px !important;
+  color: var(--ol__monochrome__400) !important;
+  font-weight: 500 !important;
+  font-size: var(--font__size__sm) !important;
+  line-height: var(--spacing__10) !important;
+  font-family: var(--font__family__inter) !important;
+  text-align: left !important;
+  background: #fff !important;
+}
+.tabs .ma-navigation__tab a:hover,
+.tabs li a:hover {
+  color: var(--ol__monochrome__950) !important;
+}
+.header-navigation-tabs .ma-navigation__tab.active a,
+.header-navigation-tabs li.active a,
+.header-navigation-tabs li.active:first-child a,
+.header-navigation-tabs .ma-navigation__tab.active:first-child a {
+  height: var(--spacing__10) !important;
+  /*
+  padding: 0 !important;
+  */
+  border: 0 !important;
+  color: var(--ol__red__700) !important;
+  line-height: var(--spacing__10) !important;
+  background: none !important;
+}
+.header-navigation-tabs .ma-navigation__tab.active,
+.header-navigation-tabs li.active {
+  /*
+  padding: 0 !important;
+  */
+  border: 0 !important;
+  border-right: 4px solid var(--ol__red__700) !important;
+  background: rgba(255, 240, 241, 0.75) !important;
+}
+.tabs a {
+  padding-left: 12px !important;
+}
+
+.header-navigation-tabs li.active:first-child a,
+.header-navigation-tabs .ma-navigation__tab.active:first-child a {
+  margin-left: -1px !important;
+}
+
+@media (min-width: 631px) {
+  .ma-main-controller {
+    display: flex !important;
+  }
+
+  .main {
+    width: 100% !important;
+
+  }
+
+  .header-navigation-tabs {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 256px !important;
+    padding-right: 16px !important;
+  }
+
+  .header-navigation-tabs li {
+    flex-basis: auto !important;
+  }
+}
+
+@media (max-width: 630px) {
+  .tabs .ma-navigation__tab a,
+  .tabs li a {
+    padding: 0 12px !important;
+  }
+
+  .header-navigation-tabs .ma-navigation__tab.active,
+  .header-navigation-tabs li.active {
+    border-right: none !important;
+    border-bottom: 4px solid var(--ol__red__700) !important;
+  }
+}
+
+/* ============================================
+   Transactions Section — Custom Styles
+   Scoped under .ma-transactions
+   Uses design tokens from style.css exclusively
+
+   Load alongside my-account-bundle.css.
+   Also requires style.css :root variables.
+   ============================================ */
+
+
+/* --- Main container background + padding --- */
+.main {
+    background: var(--ol__monochrome__50) !important;
+    padding: 1rem !important;
+  border-radius: var(--radius__sm) !important;
+      display: flex;
+    flex-direction: column;
+min-height: 512px;
+}
+
+
+/* --- Section header override --- */
+.ma-transactions .section-text {
+    float: none !important;
+    display: block !important;
+    margin: 0 0 var(--spacing__5) 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    top: auto !important;
+    font-family: var(--font__family__fira)  !important;
+    font-size: var(--font__size__2xl)  !important;
+    font-weight: var(--font__weight__semibold)  !important;
+    color: var(--ol__red__700)  !important;
+    line-height: 1.2  !important;
+    letter-spacing: -0.02em  !important;
+}
+
+
+/* --- Scrollable area override --- */
+.ma-transactions .scrollable-content,
+.scrollable-content{
+    border-top: none !important;
+    min-height: auto !important;
+    overflow: visible !important;
+}
+
+
+/* --- Card list --- */
+.ma-tx-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing__2);
+}
+
+
+/* --- Transaction card --- */
+.ma-tx-card {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing__4);
+    background: var(--white);
+    border-radius: var(--radius__lg);
+}
+
+
+/* --- Left: name + date --- */
+.ma-tx-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing__1);
+}
+
+.ma-tx-name {
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__sm);
+    font-weight: var(--font__weight__bold);
+    color: var(--ol__red__700);
+    line-height: 1.35;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ma-tx-date {
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__xs);
+    font-weight: var(--font__weight__normal);
+    color: var(--ol__monochrome__500);
+    line-height: 1.4;
+}
+
+.ma-tx-date strong {
+    font-weight: var(--font__weight__medium);
+}
+
+
+/* --- Right side --- */
+.ma-tx-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing__3);
+    flex-shrink: 0;
+    margin-left: var(--spacing__4);
+}
+
+
+/* --- Price --- */
+.ma-tx-price {
+    font-family: var(--font__family__fira);
+    font-size: var(--font__size__base);
+    font-weight: var(--font__weight__bold);
+    color: var(--ol__red__700);
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+}
+
+
+/* --- Divider dot --- */
+.ma-tx-divider {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--ol__monochrome__300);
+    flex-shrink: 0;
+}
+
+
+/* --- Action buttons --- */
+.ma-tx-actions {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.ma-tx-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: var(--radius__md);
+    color: var(--ol__monochrome__400);
+    text-decoration: none;
+    transition: background-color 125ms ease-in-out, color 125ms ease-in-out;
+}
+
+.ma-tx-action-btn:hover {
+    background-color: var(--ol__monochrome__50);
+    color: var(--ol__red__700);
+}
+
+.ma-tx-action-btn:active {
+    background-color: var(--ol__red__50);
+    color: var(--ol__red__800);
+}
+
+.ma-tx-action-btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+
+/* --- Responsive: small screens --- */
+@media (max-width: 480px) {
+    .ma-tx-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing__3);
+    }
+
+    .ma-tx-right {
+        margin-left: 0;
+        justify-content: space-between;
+    }
+
+    .ma-tx-divider {
+        display: none;
+    }
+}
+
+/* ============================================
+   Library Section — Custom Styles
+   Scoped under .ma-library / .ma-library-items
+   Uses design tokens from style.css exclusively
+
+   Requires: transactions-custom.css loaded first
+   (shared .main and .section-text styles live there)
+   ============================================ */
+
+
+/* --- Section header (same pattern as transactions) --- */
+.ma-library .section-text {
+    float: none !important;
+    display: block !important;
+    margin: 0 0 var(--spacing__5) 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    top: auto !important;
+    font-family: var(--font__family__fira)  !important;
+    font-size: var(--font__size__2xl)  !important;
+    font-weight: var(--font__weight__semibold)  !important;
+    color: var(--ol__red__700)  !important;
+    line-height: 1.2  !important;
+    letter-spacing: -0.02em  !important;
+}
+
+
+/* --- Tabs override --- */
+.ma-library .vanilla-flat-tabs {
+    float: none !important;
+    display: flex !important;
+    gap: var(--spacing__1);
+    margin: 0 0 var(--spacing__4) 0 !important;
+    font-size: var(--font__size__sm) !important;
+    text-transform: none !important;
+}
+
+.ma-library .vanilla-flat-tabs li {
+    margin: 0 !important;
+    height: auto !important;
+    line-height: normal !important;
+}
+
+.ma-library .vanilla-flat-tabs li .tab {
+    display: inline-block;
+    padding: var(--spacing__2) var(--spacing__4) !important;
+    border-radius: var(--radius__lg);
+    font-family: var(--font__family__inter) !important;
+    font-size: var(--font__size__sm) !important;
+    font-weight: var(--font__weight__medium) !important;
+    color: var(--ol__monochrome__500) !important;
+    text-transform: none !important;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 125ms ease-in-out, color 125ms ease-in-out;
+}
+
+.ma-library .vanilla-flat-tabs li .tab:hover {
+    background: var(--white);
+    color: var(--ol__monochrome__950) !important;
+}
+
+.ma-library .vanilla-flat-tabs li.active {
+    border-bottom: none !important;
+}
+
+.ma-library .vanilla-flat-tabs li.active .tab {
+    background: var(--white);
+    color: var(--ol__red__700) !important;
+    font-weight: var(--font__weight__bold) !important;
+}
+
+
+/* --- Scrollable area override --- */
+.ma-library .scrollable-content {
+    border-top: none !important;
+    min-height: auto !important;
+    overflow: visible !important;
+}
+
+
+/* --- Notice banners (postponed upgrades, shared access) --- */
+.ma-lib-notices {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing__2);
+    margin: 0 0 var(--spacing__3) 0;
+    padding: 0;
+}
+
+.ma-lib-notice {
+    padding: var(--spacing__3) var(--spacing__4);
+    background: var(--ol__cream__50);
+    border-radius: var(--radius__lg);
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__xs);
+    font-weight: var(--font__weight__normal);
+    color: var(--ol__monochrome__700);
+    line-height: 1.5;
+}
+
+.ma-lib-notice b {
+    font-weight: var(--font__weight__semibold);
+    color: var(--ol__monochrome__950);
+}
+
+
+/* --- Card list --- */
+.ma-lib-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing__2);
+}
+
+
+/* --- Subscription card --- */
+.ma-lib-card {
+    background: var(--white);
+    border-radius: var(--radius__lg);
+    position: relative;
+}
+
+.ma-lib-card__row {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing__4);
+    gap: var(--spacing__3);
+}
+
+
+/* --- Left: subscription info --- */
+.ma-lib-card__info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing__1);
+}
+
+.ma-lib-card__name {
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__sm);
+    font-weight: var(--font__weight__bold);
+    color: var(--ol__red__700);
+    line-height: 1.35;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ma-lib-card__details {
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__xs);
+    font-weight: var(--font__weight__normal);
+    color: var(--ol__monochrome__500);
+    line-height: 1.5;
+}
+
+.ma-lib-card__details a {
+    color: var(--ol__red__700);
+    text-decoration: none;
+}
+
+.ma-lib-card__details a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- Right: price + actions --- */
+.ma-lib-card__right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing__2);
+    flex-shrink: 0;
+}
+
+.ma-lib-card__price {
+    font-family: var(--font__family__fira);
+    font-size: var(--font__size__base);
+    font-weight: var(--font__weight__bold);
+    color: var(--ol__red__700);
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+}
+
+.ma-lib-card__price strong {
+    font-weight: inherit;
+}
+
+
+/* --- Toggler: visually hidden, kept for binding --- */
+.ma-lib-toggler-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: -1px !important;
+}
+
+
+/* --- Actions area --- */
+.ma-lib-card__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing__2);
+    white-space: nowrap;
+}
+
+
+/* --- Share button (Jaga sõpradega) ---
+   Bundle sets: button.button { min-height: 40px }
+                a.button { height: 40px; line-height: 40px }
+   Must override all of these to match dropdown toggle size
+   -------------------------------------------------------- */
+.ma-lib-card__actions .button.green {
+    display: inline-flex !important;
+    align-items: center;
+    gap: var(--spacing__1);
+    height: 32px !important;
+    min-height: 32px !important;
+    min-width: auto !important;
+    padding: 0 var(--spacing__3) !important;
+    margin: 0 !important;
+    border-radius: var(--radius__md) !important;
+    font-family: var(--font__family__inter) !important;
+    font-size: var(--font__size__xs) !important;
+    font-weight: var(--font__weight__semibold) !important;
+    color: var(--ol__red__700) !important;
+    background: var(--ol__red__50) !important;
+    border: none !important;
+    line-height: 1 !important;
+    cursor: pointer;
+    transition: background-color 125ms ease-in-out;
+    white-space: nowrap;
+    box-sizing: border-box !important;
+}
+
+.ma-lib-card__actions .button.green:hover {
+    background: var(--ol__red__100) !important;
+}
+
+
+/* --- Manage dropdown button override (shared: library + wallet) --- */
+.btn-icons .btn {
+    padding: 4.5px 12px 4.5px 12px !important;
+}
+
+#my-account-container .my-account-container my-account-library .btn.dropdown-toggle {
+    padding: 4.5px 12px 4.5px 12px !important;
+}
+
+.ma-lib-card__actions .btn-group.dropdown .btn,
+.ma-wallet-footer .btn-group.dropdown .btn {
+    height: 32px !important;
+    min-height: 32px !important;
+    min-width: auto !important;
+    font-family: var(--font__family__inter) !important;
+    font-size: var(--font__size__xs) !important;
+    font-weight: var(--font__weight__semibold) !important;
+    color: var(--ol__monochrome__950) !important;
+    background: var(--ol__monochrome__50) !important;
+    border: none !important;
+    border-radius: var(--radius__md) !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    transition: background-color 125ms ease-in-out;
+}
+
+.ma-lib-card__actions .btn-group.dropdown .btn:hover,
+.ma-wallet-footer .btn-group.dropdown .btn:hover {
+    background: var(--ol__monochrome__100) !important;
+}
+
+/* --- Caret override for wallet (match library's bundle-applied caret) --- */
+.ma-wallet-footer .dropdown-toggle .icon-caret {
+    width: 6px !important;
+    height: 4px !important;
+    background-image: url(https://sandbox.tinypass.com/widget/dist/myaccount/css/img/img/shevron-down-icon.svg) !important;
+    background-position: center center !important;
+    background-size: 6px 4px !important;
+    opacity: 0.4;
+    margin-left: 12px !important;
+    position: relative;
+    top: -1px;
+}
+
+.ma-wallet-footer .btn.dropdown-toggle:hover .icon-caret {
+    opacity: 1;
+}
+
+/* Dropdown menu styling (shared: library + wallet) */
+.ma-lib-card__actions .dropdown-menu,
+.ma-wallet-footer .dropdown-menu {
+    border: var(--borderwidth__1) solid var(--ol__monochrome__100) !important;
+    border-radius: var(--radius__lg) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+    padding: var(--spacing__1) 0 !important;
+    margin-top: var(--spacing__1) !important;
+}
+
+.ma-lib-card__actions .dropdown-menu li,
+.ma-wallet-footer .dropdown-menu li {
+    font-family: var(--font__family__inter) !important;
+    font-size: var(--font__size__xs) !important;
+    font-weight: var(--font__weight__medium) !important;
+    color: var(--ol__monochrome__950) !important;
+    padding: var(--spacing__2) var(--spacing__4) !important;
+    cursor: pointer;
+    transition: background-color 125ms ease-in-out;
+}
+
+.ma-lib-card__actions .dropdown-menu li:hover,
+.ma-wallet-footer .dropdown-menu li:hover {
+    background: var(--ol__monochrome__50) !important;
+}
+
+
+/* --- Pending warning --- */
+.ma-lib-card__warning {
+    padding: var(--spacing__3) var(--spacing__4);
+    background: var(--ol__cream__50);
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__xs);
+    font-weight: var(--font__weight__normal);
+    color: var(--ol__monochrome__500);
+    line-height: 1.5;
+    border-top: var(--borderwidth__1) solid var(--ol__monochrome__100);
+    border-radius: 0 0 var(--radius__lg) var(--radius__lg);
+}
+
+
+/* --- Responsive: small screens --- */
+@media (max-width: 480px) {
+    .ma-lib-card__row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing__3);
+    }
+
+    .ma-lib-card__right {
+        justify-content: space-between;
+    }
+}
+
+/* ============================================
+   Wallet Section — Custom Styles
+   Scoped under .ma-wallet
+   Uses design tokens from style.css exclusively
+
+   Requires: transactions-custom.css loaded first
+   (shared .main and .section-text styles live there)
+   ============================================ */
+
+
+/* --- Section header (reuses shared pattern) --- */
+.ma-wallet .section-text {
+    float: none !important;
+    display: block !important;
+    margin: 0 0 var(--spacing__5) 0 !important;
+    padding: 0 !important;
+    position: static !important;
+    top: auto !important;
+    font-family: var(--font__family__fira)  !important;
+    font-size: var(--font__size__2xl)  !important;
+    font-weight: var(--font__weight__semibold)  !important;
+    color: var(--ol__red__700)  !important;
+    line-height: 1.2  !important;
+    letter-spacing: -0.02em  !important;
+}
+
+
+/* --- Footer: positions "Add payment method" at bottom-right --- */
+.ma-wallet-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--spacing__4);
+}
+
+
+/* --- Scrollable area override --- */
+.ma-wallet .scrollable-content {
+    border-top: none !important;
+    min-height: auto !important;
+    overflow: visible !important;
+}
+
+
+/* --- Card list --- */
+.ma-wallet-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing__2);
+}
+
+
+/* --- Payment method card --- */
+.ma-wallet-card {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing__4);
+    background: var(--white);
+    border-radius: var(--radius__lg);
+}
+
+
+/* --- Left: payment info --- */
+.ma-wallet-card__info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing__1);
+}
+
+.ma-wallet-card__name {
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__sm);
+    font-weight: var(--font__weight__bold);
+    color: var(--ol__red__700);
+    line-height: 1.35;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ma-wallet-card__extra {
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__xs);
+    font-weight: var(--font__weight__normal);
+    color: var(--ol__monochrome__500);
+    line-height: 1.4;
+}
+
+.ma-wallet-card__expiry {
+    font-family: var(--font__family__inter);
+    font-size: var(--font__size__xs);
+    font-weight: var(--font__weight__normal);
+    color: var(--ol__monochrome__500);
+    line-height: 1.4;
+}
+
+
+/* --- Right side --- */
+.ma-wallet-card__right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing__3);
+    flex-shrink: 0;
+    margin-left: var(--spacing__4);
+}
+
+
+/* --- State badge --- */
+.ma-wallet-card__badge {
+    font-family: var(--font__family__inter);
+    font-size: 11px;
+    font-weight: var(--font__weight__semibold);
+    color: #43c08b;
+    white-space: nowrap;
+}
+
+
+/* --- Default label / button --- */
+.ma-wallet-card__default-label {
+    font-family: var(--font__family__inter);
+    font-size: 11px;
+    font-weight: var(--font__weight__semibold);
+    color: var(--ol__monochrome__500);
+    white-space: nowrap;
+}
+
+.ma-wallet-card__default-btn {
+    height: 28px;
+    padding: 0 var(--spacing__3) !important;
+    border: none;
+    border-radius: var(--radius__sm);
+    font-family: var(--font__family__inter);
+    font-size: 11px;
+    font-weight: var(--font__weight__semibold);
+    color: var(--ol__monochrome__950);
+    background: var(--ol__monochrome__50);
+    cursor: pointer;
+    transition: background-color 125ms ease-in-out;
+    white-space: nowrap;
+}
+
+.ma-wallet-card__default-btn:hover {
+    background: var(--ol__monochrome__100);
+}
+
+
+/* --- Delete button --- */
+.ma-wallet-card__delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: var(--radius__md);
+    color: var(--ol__monochrome__400);
+    text-decoration: none;
+    transition: background-color 125ms ease-in-out, color 125ms ease-in-out;
+}
+
+.ma-wallet-card__delete:hover {
+    background-color: var(--ol__red__50);
+    color: var(--ol__red__700);
+    text-decoration: none;
+}
+
+.ma-wallet-card__delete:active {
+    background-color: var(--ol__red__100);
+}
+
+.ma-wallet-card__delete svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+    .ma-wallet-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing__3);
+    }
+
+    .ma-wallet-card__right {
+        margin-left: 0;
+        justify-content: space-between;
+    }
+}
+
+  /* ============================================
+     Newsletters Section — Custom Styles
+     Piano ID template (standalone)
+     Uses design tokens from style.css
+     ============================================ */
+
+  /* --- Container --- */
+  my-account-pianoid-newsletters .scrollable-content {
+    overflow-y: hidden !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    border: none !important;
+    min-height: auto !important;
+  }
+
+  .content-padding-tb {
+    padding: 0rem !important;
+  }
+
+  /* --- Heading --- */
+  .ma-newsletters__title {
+    display: block;
+    font-family: var(--font__family__fira) !important;
+    font-size: var(--font__size__2xl) !important;
+    font-weight: var(--font__weight__semibold) !important;
+    color: var(--ol__red__700) !important;
+    margin: 0 0 var(--spacing__5) 0 !important;
+    padding: 0 !important;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  /* --- Card wrapper for the list --- */
+  newsletters-list {
+    display: block;
+    background: var(--white);
+    border-radius: var(--radius__lg);
+    overflow: hidden;
+  }
+
+  /* --- Newsletter item row --- */
+  .newsletter-item {
+    display: flex !important;
+    align-items: center !important;
+    padding: var(--spacing__4) !important;
+    border: none !important;
+    background: var(--white) !important;
+    margin: 0 !important;
+    cursor: pointer;
+    transition: background-color 125ms ease-in-out;
+  }
+
+  .newsletter-item:hover {
+    background: var(--ol__monochrome__50) !important;
+  }
+
+  /* --- Newsletter name --- */
+  .newsletter-item span {
+    font-family: var(--font__family__inter) !important;
+    font-size: var(--font__size__sm) !important;
+    font-weight: var(--font__weight__medium) !important;
+    color: var(--ol__monochrome__950) !important;
+    line-height: 1.35;
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* --- Toggle checkbox spacing --- */
+  .newsletter-item checkbox,
+  .newsletter-item .checkbox-container {
+    margin-right: var(--spacing__3) !important;
+    flex-shrink: 0;
+  }
+
+  /* --- Toggle track --- */
+  checkbox-control.toggle {
+    background: var(--ol__monochrome__300) !important;
+    border-radius: 10px !important;
+    transition: background-color 125ms ease-in-out;
+  }
+
+  checkbox-control.toggle.checked {
+    background: var(--ol__red__700) !important;
+  }
+
+  /* --- Divider between items --- */
+  .newsletter-item-divider {
+    height: 0;
+    border: none !important;
+    border-bottom: var(--borderwidth__1) solid var(--ol__monochrome__100) !important;
+    margin: 0 var(--spacing__4) !important;
+  }
+
+  /* Last divider hidden (handled by :last-child on newsletter-item if possible) */
+  .newsletter-item-divider:last-child {
+    display: none;
+  }
+
+  /* --- Actions area --- */
+  .actions {
+    margin-top: var(--spacing__5) !important;
+  }
+
+  .actions .btn-green,
+  .actions .btn.btn-green {
+    height: 40px !important;
+    padding: 0 var(--spacing__5) !important;
+    border-radius: var(--radius__md) !important;
+    font-family: var(--font__family__inter) !important;
+    font-size: var(--font__size__sm) !important;
+    font-weight: var(--font__weight__bold) !important;
+    background: var(--ol__red__700) !important;
+    color: var(--white) !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    line-height: 40px !important;
+    transition: background-color 125ms ease-in-out;
+  }
+
+  .actions .btn-green:hover,
+  .actions .btn.btn-green:hover {
+    background: var(--ol__red__800) !important;
+  }
+
+  .actions .btn-green *,
+  .actions .btn.btn-green * {
+    font-family: var(--font__family__inter) !important;
+    text-transform: none !important;
+  }
+
+/* ============================================
+   Shared Subscription — Red "Salvesta" button
+   Overrides the default blue .button.green in
+   the shared-subscription action-panel to match
+   the red complete-purchase style from checkout.
+   ============================================ */
+.myaccount-modal [shared-subscription-component] .action-panel .button.green,
+.myaccount-modal [shared-subscription-component] .action-panel button.button.green {
+    background-color: var(--ol__red__700) !important;
+    color: var(--white) !important;
+    border: none !important;
+    border-radius: var(--radius__sm) !important;
+    min-width: 130px !important;
+    font-family: var(--font__family__fira) !important;
+    font-size: var(--font__size__base) !important;
+    font-weight: var(--font__weight__bold) !important;
+    text-transform: uppercase !important;
+    transition: background-color 125ms ease-in-out;
+}
+
+.myaccount-modal [shared-subscription-component] .action-panel .button.green:hover,
+.myaccount-modal [shared-subscription-component] .action-panel button.button.green:hover {
+    background-color: var(--ol__red__800) !important;
+}
+
+.myaccount-modal [shared-subscription-component] .action-panel .button.green:disabled,
+.myaccount-modal [shared-subscription-component] .action-panel button.button.green:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+
+/* ============================================
+   Shared Subscription — Modern Redesign
+   Overrides legacy ss__* bundle styles to match
+   the established My Account visual language.
+   ============================================ */
+
+/* --- Modal content container --- */
+.myaccount-modal [shared-subscription-component] .modal-content {
+    padding: var(--spacing__6) !important;
+}
+
+/* --- Heading --- */
+.myaccount-modal .ss__h1,
+.myaccount-modal .ss__h1.ss__h1--mb25 {
+    font-family: var(--font__family__fira) !important;
+    font-size: var(--font__size__2xl) !important;
+    font-weight: var(--font__weight__semibold) !important;
+    color: var(--ol__red__700) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: var(--spacing__5) !important;
+}
+
+/* --- User list rows --- */
+.myaccount-modal .ss__border--top,
+.myaccount-modal .ss__border--bottom {
+    border-color: var(--ol__monochrome__100) !important;
+}
+
+.myaccount-modal .ss__indent {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* --- User info row --- */
+.myaccount-modal .ss__user-info-wrapper {
+    min-height: 56px !important;
+    padding: var(--spacing__3) 0 !important;
+    gap: var(--spacing__3);
+}
+
+.myaccount-modal .ss__flex-row--left-column {
+    font-family: var(--font__family__inter) !important;
+    font-size: var(--font__size__sm) !important;
+    font-weight: var(--font__weight__medium) !important;
+    color: var(--ol__monochrome__950) !important;
+    padding: 0 !important;
+}
+
+.myaccount-modal .ss__flex-row--right-column {
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing__1);
+}
+
+.myaccount-modal .ss__color--grey {
+    color: var(--ol__monochrome__500) !important;
+}
+
+.myaccount-modal .ss-redeemed-on {
+    font-family: var(--font__family__inter) !important;
+    font-size: var(--font__size__xs) !important;
+    color: var(--ol__monochrome__500) !important;
+    margin-top: var(--spacing__1) !important;
+}
+
+/* --- Row action buttons (Edit, Delete, Resend) --- */
+.myaccount-modal .ss__row-button {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: var(--radius__md) !important;
+    opacity: 0.5 !important;
+    margin-right: 0 !important;
+    background-size: 16px 16px !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    transition: opacity 125ms ease-in-out, background-color 125ms ease-in-out;
+}
+
+.myaccount-modal .ss__row-button:not(:disabled):hover {
+    opacity: 1 !important;
+    background-color: var(--ol__monochrome__50) !important;
+}
+
+/* --- Form area --- */
+.myaccount-modal .ss__form {
+    margin: 0 !important;
+    padding: var(--spacing__4) 0 !important;
+    border-top: var(--borderwidth__1) solid var(--ol__monochrome__100) !important;
+}
+
+.myaccount-modal .ss__single-form .ss__form {
+    border-top: var(--borderwidth__1) solid var(--ol__monochrome__100) !important;
+    padding-bottom: 0 !important;
+}
+
+/* --- Form rows --- */
+.myaccount-modal .ss__row {
+    overflow: visible !important;
+}
+
+.myaccount-modal .ss__row:not(:last-child) {
+    margin-bottom: var(--spacing__3) !important;
+}
+
+/* --- Input fields --- */
+.myaccount-modal input[type="text"].ss__row-input {
+    font-family: var(--font__family__inter) !important;
+    font-size: var(--font__size__sm) !important;
+    font-weight: var(--font__weight__normal) !important;
+    color: var(--ol__monochrome__950) !important;
+    height: 40px !important;
+    padding: 0 var(--spacing__3) !important;
+    border: var(--borderwidth__1) solid var(--ol__monochrome__200) !important;
+    border-radius: var(--radius__md) !important;
+    background: var(--white) !important;
+    outline: none !important;
+    transition: border-color 125ms ease-in-out, box-shadow 125ms ease-in-out;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+.myaccount-modal input[type="text"].ss__row-input:focus {
+    border-color: var(--ol__red__700) !important;
+    box-shadow: 0 0 0 2px var(--ol__red__50) !important;
+}
+
+.myaccount-modal input[type="text"].ss__row-input::placeholder {
+    color: var(--ol__monochrome__400) !important;
+    font-weight: var(--font__weight__normal) !important;
+}
+
+/* --- Name fields row (first/last) --- */
+.myaccount-modal .ss__row-left-column__first-half,
+.myaccount-modal .ss__row-right-column__second-half {
+    padding-right: var(--spacing__2) !important;
+    padding-left: 0 !important;
+}
+
+.myaccount-modal .ss__row-right-column__second-half {
+    padding-left: var(--spacing__2) !important;
+    padding-right: 0 !important;
+}
+
+/* --- "Add shared account" link --- */
+.myaccount-modal .ss__add-shared-account {
+    font-family: var(--font__family__inter) !important;
+    font-size: var(--font__size__sm) !important;
+    font-weight: var(--font__weight__medium) !important;
+    color: var(--ol__red__700) !important;
+    padding-left: 24px !important;
+    transition: color 125ms ease-in-out;
+}
+
+.myaccount-modal .ss__add-shared-account:hover {
+    color: var(--ol__red__800) !important;
+}
+
+.myaccount-modal .ss__add-shared-account::before {
+    background: url(data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2221%22%20viewBox%3D%220%200%2020%2021%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M10%206.5H9V9.5H6V10.5H9V13.5H10V10.5H13V9.5H10V6.5Z%22%20fill%3D%22%23e3000f%22%2F%3E%3C%2Fsvg%3E) no-repeat !important;
+    background-size: 20px !important;
+    opacity: 0.8 !important;
+}
+
+.myaccount-modal .ss__add-shared-account:hover::before {
+    opacity: 1 !important;
+}
+
+.myaccount-modal .ss__add-shared-account--limit {
+    color: var(--ol__monochrome__500) !important;
+}
+
+/* --- User control area --- */
+.myaccount-modal .user-control {
+    padding-top: var(--spacing__4) !important;
+    font-family: var(--font__family__inter) !important;
+    font-size: var(--font__size__sm) !important;
+    color: var(--ol__monochrome__500) !important;
+}
+
+/* --- Action panel (footer) --- */
+.myaccount-modal [shared-subscription-component] .action-panel {
+    padding: var(--spacing__4) var(--spacing__6) !important;
+    border-top: var(--borderwidth__1) solid var(--ol__monochrome__100) !important;
+}
+
+/* --- Cancel/Apply buttons in form row --- */
+.myaccount-modal .ss__row-button--cancel {
+    background-size: 14px 14px !important;
+    background-position: center center !important;
+}
+
+.myaccount-modal .ss__row-button--apply {
+    background-size: 14px 14px !important;
+    background-position: center center !important;
+}
+
+/* --- Responsive: small screens --- */
+@media (max-width: 500px) {
+    .myaccount-modal [shared-subscription-component] .modal-content {
+        padding: var(--spacing__4) !important;
+    }
+
+    .myaccount-modal [shared-subscription-component] .action-panel {
+        padding: var(--spacing__3) var(--spacing__4) !important;
+    }
+
+    .myaccount-modal .ss__row-left-column__first-half,
+    .myaccount-modal .ss__row-right-column__second-half {
+        width: 100% !important;
+        padding: 0 !important;
+        float: none !important;
+    }
+
+    .myaccount-modal .ss__row-left-column__first-half {
+        margin-bottom: var(--spacing__3) !important;
+    }
+}
+
+/* ============================================
+   Mobile: Remove three-dots kebab override
+   Bundle turns .btn-control-actions .btn .icon-caret
+   into 3 gray circles at max-width: 600px.
+   We force the normal dropdown appearance on all screens.
+   ============================================ */
+@media (max-width: 600px) {
+  /* Restore button text + sizing */
+  .btn-control-actions .btn {
+    font-size: var(--font__size__xs) !important;
+    height: 32px !important;
+    line-height: 1 !important;
+    padding: 4.5px 12px !important;
+    background: var(--ol__monochrome__50) !important;
+    border: none !important;
+    white-space: nowrap !important;
+  }
+
+  /* Restore caret to chevron (wallet) */
+  .btn-control-actions .btn .icon-caret,
+  .ma-wallet-footer .btn-control-actions .btn .icon-caret {
+    width: 6px !important;
+    height: 4px !important;
+    border-radius: 0 !important;
+    background: none !important;
+    background-image: url(https://sandbox.tinypass.com/widget/dist/myaccount/css/img/img/shevron-down-icon.svg) !important;
+    background-position: center center !important;
+    background-size: 6px 4px !important;
+    background-repeat: no-repeat !important;
+    opacity: 0.4;
+    margin-left: 12px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+  }
+
+  /* Restore caret to chevron (library — override bundle's high-specificity selector) */
+  #my-account-container .my-account-container my-account-library .btn.dropdown-toggle .icon-caret {
+    width: 6px !important;
+    height: 4px !important;
+    border-radius: 0 !important;
+    background: none !important;
+    background-image: url(https://sandbox.tinypass.com/widget/dist/myaccount/css/img/img/shevron-down-icon.svg) !important;
+    background-position: center center !important;
+    background-size: 6px 4px !important;
+    background-repeat: no-repeat !important;
+    opacity: 0.4 !important;
+    margin-left: 12px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+  }
+
+  /* Kill the ::before and ::after dots */
+  .btn-control-actions .btn .icon-caret::before,
+  .btn-control-actions .btn .icon-caret::after,
+  #my-account-container .my-account-container my-account-library .btn.dropdown-toggle .icon-caret::before,
+  #my-account-container .my-account-container my-account-library .btn.dropdown-toggle .icon-caret::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* Override library button alignment + margin-top */
+  #my-account-container .my-account-container my-account-library .btn.dropdown-toggle {
+    align-items: center !important;
+    margin-top: 0 !important;
+  }
+}

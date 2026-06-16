@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="my-account-layout.css">
+        <link rel="stylesheet" href="myaccountbundle.css">
+
+  </head>
+  <body>
+<div class="modal-overlay ng-scope active" style="opacity: 1;"><div class="modal myaccount-modal active ng-scope" style="opacity: 1;"><div tabindex="0" class="ma-modal-title"></div>
+    <div shared-subscription-component="" shared-accounts-config="saConfig" class="ng-isolate-scope">
+    <div class="modal-content" data-e2e="shared-subscription">
+        <h1 class="ss__h1 ss__h1--mb25"><t><span class="ng-scope">Halda oma jagatud kontosid</span></t></h1>
+        <div ma-error-section="" errors="errors" class="ng-isolate-scope">
+  <!-- ngIf: errors.length > 0 -->
+</div>
+
+        <div class="ng-hide" ng-show="storage.users.length &gt; 0">
+            <!-- ngRepeat: user in storage.users -->
+        </div>
+
+        <!-- ngIf: !isUsersExists() || (isEditingFormShown() && !isEditingUser()) --><div class="ss__single-form ng-scope ng-isolate-scope" ng-if="!isUsersExists() || (isEditingFormShown() &amp;&amp; !isEditingUser())" shared-subscription-form-component="" storage="storage">
+    <form name="manageSharedUserForm" class="ss__form ng-pristine ng-invalid ng-invalid-required">
+        <div class="ss__row">
+            <div class="ss__row-right-column" style="float: none !important;width: 96px !important;padding-top: 0 !important;display: flex !important;align-items: center !important;justify-content: space-between !important;position: absolute !important;right: 52px !important;margin-top: 6px !important;z-index: 100 !important;">
+                <button type="button" class="ss__row-button ss__row-button--cancel" ng-disabled="storage.users.length === 0" ng-click="cancelEditingUser()" disabled="disabled"><t context="checkout.platform"><span class="ng-scope">Katkesta</span></t></button>
+                <button type="button" class="ss__row-button ss__row-button--apply" ng-disabled="storage.isFormDirty !== true" ng-click="validateUser()" disabled="disabled" style="opacity: 1 !important; width: 83px !important; height: 28px !important; background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MyIgaGVpZ2h0PSIyOCIgZmlsbD0ibm9uZSI+PHJlY3Qgd2lkdGg9IjgzIiBoZWlnaHQ9IjI4IiBmaWxsPSIjRTMwMDBGIiByeD0iNCI+PC9yZWN0PjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xOS4yMDYgOS4yOThWMTlIMTYuOTFWOS4yOThoMi4yOTZabTUuNTcyIDAtMy4wOTQgNC4zNTRMMjUuMDMgMTloLTIuNjZsLTMuMDk0LTUuMTggMy4wOC00LjUyMmgyLjQyMlptMy4yODcgMFYxOUgyNS43N1Y5LjI5OGgyLjI5NlpNMzcuMzQ3IDE5SDM0LjQybC0yLjgtNy41MThjLjA5My43MzcuMTYzIDEuMzkuMjEgMS45Ni4wNTYuNTYuMDg0IDEuMjI3LjA4NCAyLjAwMlYxOUgyOS44N1Y5LjI5OGgyLjg1NmwyLjg3IDcuNTMyYTIyLjg0IDIyLjg0IDAgMCAxLS4zMDgtMy42MTJ2LTMuOTJoMi4wNThWMTlabTkuMjgzIDBoLTIuOTI2bC0yLjgtNy41MThjLjA5My43MzcuMTYzIDEuMzkuMjEgMS45Ni4wNTYuNTYuMDg0IDEuMjI3LjA4NCAyLjAwMlYxOWgtMi4wNDRWOS4yOThoMi44NTZsMi44NyA3LjUzMmEyMi44NCAyMi44NCAwIDAgMS0uMzA4LTMuNjEydi0zLjkyaDIuMDU4VjE5Wm00LjEwMy05LjcwMlYxOWgtMi4yOTZWOS4yOThoMi4yOTZabTguNDQyIDAtLjIyNCAxLjc2NGgtMi4zOTRWMTlINTQuMjZ2LTcuOTM4aC0yLjUwNlY5LjI5OGg3LjQyWk02NC41MTIgMTlsLS41MDQtMi4wODZINjEuMThMNjAuNjkgMTloLTIuMzhsMi45MjYtOS43MDJoMi43ODZMNjYuOTQ4IDE5aC0yLjQzNlptLTIuOTQtMy43NTJoMi4wNDRsLTEuMDIyLTQuMjg0LTEuMDIyIDQuMjg0WiI+PC9wYXRoPjwvc3ZnPg==)no-repeat !important;"><t context="checkout.platform"><span class="ng-scope">Apply</span></t></button>
+            </div>
+            <div class="ss__row-left-column" style="margin-right: 0px !important;">
+                <input type="text" id="ss-user-email" class="ss__row-input regular-border ng-pristine ng-invalid ng-invalid-required" name="email" ng-model="user.email" ng-keydown="onKeyDown($event)" ng-change="checkIsFormValid()" placeholder="Email..." autocomplete="off" auto-focus="" required="">
+            </div>
+        </div>
+        <div class="ss__row">
+            <div class="ss__row-left-column">
+                <div class="ss__row-left-column__first-half">
+                    <input type="text" class="ss__row-input regular-border ng-pristine ng-valid" ng-model="user.firstName" name="firstName" ng-keydown="onKeyDown($event)" ng-change="checkIsFormValid()" placeholder="First name (Optional)..." autocomplete="no-autocomplete">
+                </div>
+                <div class="ss__row-right-column__second-half">
+                    <input type="text" class="ss__row-input regular-border ng-pristine ng-valid" ng-model="user.lastName" name="lastName" ng-keydown="onKeyDown($event)" ng-change="checkIsFormValid()" placeholder="Last name (Optional)..." autocomplete="no-autocomplete">
+                </div>
+            </div>
+        </div>
+    </form>
+</div><!-- end ngIf: !isUsersExists() || (isEditingFormShown() && !isEditingUser()) -->
+        <div class="user-control" ng-class="{'no-user-control': isEditingFormShown() &amp;&amp; storage.sharedAccountsLimit &gt; 0 &amp;&amp; isUsersExists()}" ng-hide="isReadonly === true">
+            <!-- ngIf: !isUsersExists() --><div ng-if="!isUsersExists()" class="ng-scope"><t context="checkout.platform" arg0="4"><span class="ng-binding ng-scope">Saad lisada kuni 4 jagatud kontot</span></t></div><!-- end ngIf: !isUsersExists() -->
+            <button class="ss__add-shared-account ng-hide" ng-show="canAddUser()" ng-click="addUser()"><t context="checkout.platform" arg0="4"><span class="ng-scope">Lisa jagatud konto </span><span class="ss__add-shared-account--limit ng-binding ng-scope">(veel 4)</span></t></button>
+            <span class="ss__color--grey ng-hide" ng-show="storage.sharedAccountsLimit === 0"><t context="checkout.platform"><span class="ng-scope">Jagatud kontode limiit on täis</span></t></span>
+            <span class="ss__color--grey ng-hide" ng-show="storage.sharedAccountsDifference &gt; 0"><t context="checkout.platform" arg0="0"><span class="ng-binding ng-scope">Please remove 0 account(s) to proceed</span></t></span>
+        </div>
+        <div class="user-control ng-hide" ng-show="isReadonly === true">
+            <span class="ss__color--grey"><t context="checkout.platform"><span class="ng-scope">All accounts will be removed.</span></t></span>
+        </div>
+
+    </div>
+    <div class="action-panel">
+        <div ng-show="!isUsersExists() &amp;&amp; !isFormDirty()" class="">
+            <button type="button" ng-click="next()" class="button green" ng-disabled="isNextButtonDisabled || (storage.sharedAccountsDifference &gt; 0 &amp;&amp; isReadonly === false)">
+                <t context="checkout.platform"><span class="ng-scope">Salvesta</span></t>
+            </button>
+        </div>
+        <div ng-show="isUsersExists() || (!isUsersExists() &amp;&amp; isFormDirty())" class="ng-hide">
+            <button type="button" ng-click="next()" class="button green" ng-disabled="isFormDirty() || isEditingFormShown() || isNextButtonDisabled || (storage.sharedAccountsDifference &gt; 0 &amp;&amp; isReadonly === false)" disabled="disabled">
+                <t context="checkout.platform"><span class="ng-scope">Salvesta</span></t>
+            </button>
+        </div>
+    </div>
+</div>
+</div></div>
+  </body>
+</html>
